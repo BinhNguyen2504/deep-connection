@@ -1,0 +1,2000 @@
+/* ========================================
+
+   DEEP CONNECTION — CSS (Mobile-First)
+
+   ======================================== */
+
+/* ---------- CSS Variables ---------- */
+
+:root {
+	--bg-primary: #1a1a2e;
+
+	--bg-secondary: #16213e;
+
+	--bg-card-front: #0f3460;
+
+	--text-primary: #eaeaea;
+
+	--text-secondary: #a0aec0;
+
+	--text-muted: #64748b;
+
+	--accent: #e94560;
+
+	--card-radius: 20px;
+
+	--card-width: min(85vw, 360px);
+
+	--card-height: min(65vh, 520px);
+
+	--transition-flip: 0.6s;
+
+	--transition-slide: 0.35s;
+
+	--font-display: "Playfair Display", Georgia, serif;
+
+	--font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+	--card-border-alpha: 0.12;
+
+	--card-shadow-alpha: 0.5;
+
+	--ornament-alpha: 0.08;
+
+	--stack-bg: rgba(15, 52, 96, 0.4);
+
+	--stack-bg-2: rgba(15, 52, 96, 0.2);
+
+	--modal-bg: rgba(0, 0, 0, 0.7);
+
+	--btn-bg: rgba(255, 255, 255, 0.08);
+
+	--btn-active-bg: rgba(255, 255, 255, 0.16);
+}
+
+/* ---------- Light Theme ---------- */
+
+[data-theme="light"] {
+	--bg-primary: #faf5f0;
+
+	--bg-secondary: #fff5ee;
+
+	--bg-card-front: #fff0e8;
+
+	--text-primary: #2d1f2f;
+
+	--text-secondary: #6b5b6e;
+
+	--text-muted: #9b8b9e;
+
+	--accent: #e94560;
+
+	--card-border-alpha: 0.18;
+
+	--card-shadow-alpha: 0.15;
+
+	--ornament-alpha: 0.12;
+
+	--stack-bg: rgba(200, 170, 160, 0.35);
+
+	--stack-bg-2: rgba(200, 170, 160, 0.18);
+
+	--modal-bg: rgba(0, 0, 0, 0.4);
+
+	--btn-bg: rgba(0, 0, 0, 0.06);
+
+	--btn-active-bg: rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Reset & Base ---------- */
+
+*,
+*::before,
+*::after {
+	margin: 0;
+
+	padding: 0;
+
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	font-family: var(--font-body);
+
+	background: var(--bg-primary);
+
+	color: var(--text-primary);
+
+	min-height: 100dvh;
+
+	overflow: hidden;
+
+	overscroll-behavior: none;
+
+	-webkit-user-select: none;
+
+	user-select: none;
+}
+
+/* ---------- Screen Management ---------- */
+
+.screen {
+	position: fixed;
+
+	inset: 0;
+
+	display: flex;
+
+	flex-direction: column;
+
+	opacity: 0;
+
+	visibility: hidden;
+
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+
+	z-index: 1;
+}
+
+.screen.active {
+	opacity: 1;
+
+	visibility: visible;
+
+	z-index: 10;
+}
+
+/* ==========================================
+
+   SCREEN 0 — COVER / LANDING
+
+   ========================================== */
+
+.cover-container {
+	flex: 1;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	justify-content: center;
+
+	position: relative;
+
+	overflow: hidden;
+
+	cursor: pointer;
+
+	background: radial-gradient(
+			ellipse at 30% 20%,
+
+			rgba(233, 69, 96, 0.15),
+			transparent 60%
+		),
+		radial-gradient(
+			ellipse at 70% 80%,
+
+			rgba(167, 139, 250, 0.12),
+			transparent 60%
+		),
+		var(--bg-primary);
+
+	transition: background 0.4s ease;
+}
+
+/* Floating hearts */
+
+.cover-hearts {
+	position: absolute;
+
+	inset: 0;
+
+	pointer-events: none;
+
+	overflow: hidden;
+}
+
+.floating-heart {
+	position: absolute;
+
+	bottom: -30px;
+
+	left: var(--x, 50%);
+
+	font-size: var(--size, 1rem);
+
+	color: var(--accent);
+
+	opacity: 0;
+
+	animation: heartFloat 6s ease-in-out var(--delay, 0s) infinite;
+}
+
+@keyframes heartFloat {
+	0% {
+		transform: translateY(0) rotate(0deg) scale(0.5);
+
+		opacity: 0;
+	}
+
+	10% {
+		opacity: 0.6;
+	}
+
+	50% {
+		opacity: 0.4;
+	}
+
+	100% {
+		transform: translateY(-100vh) rotate(45deg) scale(1);
+
+		opacity: 0;
+	}
+}
+
+.cover-content {
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	gap: 1.5rem;
+
+	z-index: 2;
+
+	animation: coverFadeIn 1s ease-out;
+}
+
+@keyframes coverFadeIn {
+	from {
+		opacity: 0;
+
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+
+		transform: translateY(0);
+	}
+}
+
+/* Cover deck visual */
+
+.cover-deck {
+	position: relative;
+
+	width: 120px;
+
+	height: 160px;
+
+	margin-bottom: 0.5rem;
+}
+
+.cover-card {
+	position: absolute;
+
+	width: 100%;
+
+	height: 100%;
+
+	border-radius: 16px;
+
+	background: var(--bg-card-front);
+
+	border: 2px solid rgba(255, 255, 255, 0.1);
+
+	box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.cover-card-3 {
+	transform: rotate(-8deg) translateX(-8px);
+
+	opacity: 0.5;
+}
+
+.cover-card-2 {
+	transform: rotate(4deg) translateX(4px);
+
+	opacity: 0.7;
+}
+
+.cover-card-1 {
+	transform: rotate(0deg);
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	border-color: rgba(233, 69, 96, 0.3);
+
+	background: linear-gradient(145deg, rgba(233, 69, 96, 0.15), transparent), var(--bg-card-front);
+}
+
+.cover-card-1::before {
+	content: "";
+
+	position: absolute;
+
+	inset: 6px;
+
+	border: 1px solid rgba(255, 255, 255, 0.08);
+
+	border-radius: 12px;
+}
+
+.cover-card-icon {
+	font-size: 2.5rem;
+
+	animation: pulse 2s ease-in-out infinite;
+}
+
+.cover-title {
+	font-family: var(--font-display);
+
+	font-size: 2.5rem;
+
+	font-weight: 700;
+
+	letter-spacing: -0.5px;
+
+	background: linear-gradient(135deg, #e94560, #ff9ff3, #c084fc);
+
+	-webkit-background-clip: text;
+
+	-webkit-text-fill-color: transparent;
+
+	background-clip: text;
+
+	text-align: center;
+}
+
+.cover-subtitle {
+	color: var(--text-secondary);
+
+	font-size: 1rem;
+
+	text-align: center;
+
+	max-width: 280px;
+
+	line-height: 1.6;
+}
+
+.cover-start-hint {
+	font-size: 0.85rem;
+
+	color: var(--text-muted);
+
+	margin-top: 1.5rem;
+
+	animation: pulse 2s ease-in-out infinite;
+
+	letter-spacing: 0.5px;
+}
+
+.cover-footer {
+	position: absolute;
+
+	bottom: 2rem;
+
+	text-align: center;
+
+	padding: 0 2rem;
+
+	z-index: 2;
+}
+
+.cover-footer p {
+	font-size: 0.75rem;
+
+	color: var(--text-muted);
+
+	font-style: italic;
+
+	line-height: 1.5;
+}
+
+/* ==========================================
+
+   SCREEN 1 — HOME / CATEGORY SELECT
+
+   ========================================== */
+
+.home-container {
+	flex: 1;
+
+	display: flex;
+
+	flex-direction: column;
+
+	padding: 2rem 1.25rem;
+
+	overflow-y: auto;
+
+	-webkit-overflow-scrolling: touch;
+}
+
+.home-header {
+	text-align: center;
+
+	margin-bottom: 2rem;
+}
+
+.logo-icon {
+	font-size: 3rem;
+
+	margin-bottom: 0.5rem;
+
+	animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+.app-title {
+	font-family: var(--font-display);
+
+	font-size: 2.25rem;
+
+	font-weight: 700;
+
+	letter-spacing: -0.5px;
+
+	background: linear-gradient(135deg, #e94560, #ff9ff3, #c084fc);
+
+	-webkit-background-clip: text;
+
+	-webkit-text-fill-color: transparent;
+
+	background-clip: text;
+}
+
+.app-subtitle {
+	color: var(--text-secondary);
+
+	font-size: 0.9rem;
+
+	line-height: 1.5;
+
+	margin-top: 0.75rem;
+
+	max-width: 300px;
+
+	margin-left: auto;
+
+	margin-right: auto;
+}
+
+/* ---------- Category Grid ---------- */
+
+.category-grid {
+	display: grid;
+
+	grid-template-columns: repeat(2, 1fr);
+
+	gap: 1rem;
+
+	flex: 1;
+}
+
+.category-card {
+	background: var(--bg-secondary);
+
+	border-radius: 16px;
+
+	padding: 1.5rem 1rem;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	justify-content: center;
+
+	gap: 0.75rem;
+
+	cursor: pointer;
+
+	border: 2px solid transparent;
+
+	transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+	position: relative;
+
+	overflow: hidden;
+
+	animation: categoryFadeIn 0.5s ease-out backwards;
+}
+
+.category-card:nth-child(1) {
+	animation-delay: 0.05s;
+}
+
+.category-card:nth-child(2) {
+	animation-delay: 0.1s;
+}
+
+.category-card:nth-child(3) {
+	animation-delay: 0.15s;
+}
+
+.category-card:nth-child(4) {
+	animation-delay: 0.2s;
+}
+
+.category-card:nth-child(5) {
+	animation-delay: 0.25s;
+}
+
+.category-card:nth-child(6) {
+	animation-delay: 0.3s;
+}
+
+@keyframes categoryFadeIn {
+	from {
+		opacity: 0;
+
+		transform: translateY(12px) scale(0.95);
+	}
+
+	to {
+		opacity: 1;
+
+		transform: translateY(0) scale(1);
+	}
+}
+
+.category-card::before {
+	content: "";
+
+	position: absolute;
+
+	inset: 0;
+
+	opacity: 0.08;
+
+	border-radius: 16px;
+
+	transition: opacity 0.2s ease;
+}
+
+.category-card:active {
+	transform: scale(0.96);
+}
+
+.category-card:hover {
+	border-color: var(--category-color, var(--accent));
+
+	box-shadow: 0 0 20px -5px var(--category-color, var(--accent));
+}
+
+.category-card:hover::before {
+	opacity: 0.15;
+}
+
+.category-icon {
+	font-size: 2.25rem;
+}
+
+.category-name {
+	font-weight: 600;
+
+	font-size: 1rem;
+
+	text-align: center;
+}
+
+.category-name-en {
+	font-size: 0.75rem;
+
+	color: var(--text-muted);
+
+	margin-top: -0.25rem;
+}
+
+.category-count {
+	font-size: 0.7rem;
+
+	color: var(--text-muted);
+
+	background: var(--btn-bg);
+
+	padding: 0.2rem 0.6rem;
+
+	border-radius: 20px;
+}
+
+/* ---------- Home Footer ---------- */
+
+.home-footer {
+	text-align: center;
+
+	padding: 1.25rem 0 0.5rem;
+
+	color: var(--text-muted);
+
+	font-size: 0.75rem;
+}
+
+/* ==========================================
+
+   SCREEN 2 — CARD PLAY
+
+   ========================================== */
+
+.play-container {
+	flex: 1;
+
+	display: flex;
+
+	flex-direction: column;
+
+	height: 100dvh;
+}
+
+/* ---------- Play Header ---------- */
+
+.play-header {
+	display: flex;
+
+	align-items: center;
+
+	justify-content: space-between;
+
+	padding: 1rem 1rem 0.5rem;
+
+	z-index: 20;
+
+	gap: 0.25rem;
+}
+
+.play-header-right {
+	display: flex;
+
+	align-items: center;
+
+	gap: 0.25rem;
+}
+
+.btn-icon {
+	width: 44px;
+
+	height: 44px;
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	background: var(--btn-bg);
+
+	border: none;
+
+	border-radius: 12px;
+
+	color: var(--text-primary);
+
+	cursor: pointer;
+
+	transition: background 0.2s ease;
+}
+
+.btn-icon:active {
+	background: var(--btn-active-bg);
+}
+
+.play-header-info {
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	gap: 0.15rem;
+}
+
+.category-label {
+	font-weight: 600;
+
+	font-size: 1rem;
+}
+
+.card-counter {
+	font-size: 0.75rem;
+
+	color: var(--text-muted);
+}
+
+/* ---------- Card Area ---------- */
+
+.card-area {
+	flex: 1;
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	position: relative;
+
+	padding: 1rem;
+
+	overflow: hidden;
+}
+
+.card-stack {
+	position: relative;
+
+	width: var(--card-width);
+
+	height: var(--card-height);
+
+	perspective: 1200px;
+}
+
+/* Stack shadow — simulates more cards below */
+
+.card-stack::before,
+.card-stack::after {
+	content: "";
+
+	position: absolute;
+
+	border-radius: var(--card-radius);
+
+	background: rgba(15, 52, 96, 0.4);
+
+	pointer-events: none;
+
+	transition: opacity 0.4s ease;
+}
+
+.card-stack::before {
+	bottom: -6px;
+
+	left: 4px;
+
+	right: 4px;
+
+	height: 12px;
+
+	border-bottom-left-radius: var(--card-radius);
+
+	border-bottom-right-radius: var(--card-radius);
+
+	background: var(--stack-bg);
+
+	z-index: -1;
+}
+
+.card-stack::after {
+	bottom: -11px;
+
+	left: 8px;
+
+	right: 8px;
+
+	height: 12px;
+
+	border-bottom-left-radius: var(--card-radius);
+
+	border-bottom-right-radius: var(--card-radius);
+
+	background: var(--stack-bg-2);
+
+	z-index: -2;
+}
+
+/* Hide stack shadows on last card */
+
+.card-stack.last-card::before,
+.card-stack.last-card::after {
+	opacity: 0;
+}
+
+/* ---------- Deep Connection Card ---------- */
+
+.deep-card {
+	position: absolute;
+
+	width: 100%;
+
+	height: 100%;
+
+	border-radius: var(--card-radius);
+
+	cursor: pointer;
+
+	transform-style: preserve-3d;
+
+	transition: transform var(--transition-flip) cubic-bezier(0.4, 0, 0.2, 1);
+
+	will-change: transform;
+}
+
+.deep-card.flipped {
+	transform: rotateY(180deg);
+}
+
+/* Card entrance animation */
+
+.deep-card.active-card {
+	z-index: 5;
+
+	filter: none;
+
+	cursor: pointer;
+
+	animation: cardEntrance 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes cardEntrance {
+	from {
+		opacity: 0;
+
+		transform: scale(0.9) translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+
+		transform: scale(1) translateY(0);
+	}
+}
+
+/* Stacked cards behind */
+
+.deep-card.stack-1 {
+	transform: scale(0.95) translateY(10px);
+
+	z-index: 1;
+
+	filter: brightness(0.7);
+
+	transition: transform 0.3s ease;
+}
+
+.deep-card.stack-2 {
+	transform: scale(0.9) translateY(20px);
+
+	z-index: 0;
+
+	filter: brightness(0.5);
+
+	transition: transform 0.3s ease;
+}
+
+/* Swiping state */
+
+.deep-card.swiping {
+	transition: none;
+}
+
+/* Shuffle animation — Phase 1: scatter cards */
+
+@keyframes shuffleScatter {
+	0% {
+		transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+
+		opacity: 1;
+	}
+
+	40% {
+		transform: translateX(var(--scatter-x, 30px)) translateY(var(--scatter-y, -50px))
+			rotate(var(--scatter-rot, 15deg)) scale(0.88);
+
+		opacity: 0.9;
+	}
+
+	70% {
+		transform: translateX(calc(var(--scatter-x, 30px) * 0.5)) translateY(-20px)
+			rotate(calc(var(--scatter-rot, 15deg) * -0.6)) scale(0.82);
+
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: translateX(0) translateY(20px) rotate(0deg) scale(0.75);
+
+		opacity: 0;
+	}
+}
+
+.card-stack.shuffling .deep-card {
+	animation: shuffleScatter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+
+	pointer-events: none;
+}
+
+.card-stack.shuffling .deep-card:nth-child(1) {
+	--scatter-x: -60px;
+
+	--scatter-y: -55px;
+
+	--scatter-rot: -18deg;
+
+	animation-delay: 0s;
+}
+
+.card-stack.shuffling .deep-card:nth-child(2) {
+	--scatter-x: 50px;
+
+	--scatter-y: -40px;
+
+	--scatter-rot: 14deg;
+
+	animation-delay: 0.06s;
+}
+
+.card-stack.shuffling .deep-card:nth-child(3) {
+	--scatter-x: -30px;
+
+	--scatter-y: -30px;
+
+	--scatter-rot: -8deg;
+
+	animation-delay: 0.12s;
+}
+
+/* Shuffle animation — Phase 2: deal cards back in */
+
+@keyframes shuffleDeal {
+	0% {
+		transform: translateY(-80px) rotate(8deg) scale(0.7);
+
+		opacity: 0;
+	}
+
+	50% {
+		transform: translateY(8px) rotate(-2deg) scale(1.03);
+
+		opacity: 0.8;
+	}
+
+	100% {
+		transform: translateY(0) rotate(0deg) scale(1);
+
+		opacity: 1;
+	}
+}
+
+.deep-card.shuffle-deal {
+	animation: shuffleDeal 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards !important;
+}
+
+/* ---------- Card Face (Front & Back) ---------- */
+
+.card-face {
+	position: absolute;
+
+	inset: 0;
+
+	border-radius: var(--card-radius);
+
+	backface-visibility: hidden;
+
+	-webkit-backface-visibility: hidden;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	justify-content: center;
+
+	padding: 2rem 1.5rem;
+
+	overflow: hidden;
+}
+
+/* Front — Cover face */
+
+.card-front {
+	background: var(--bg-card-front);
+
+	border: 2px solid rgba(128, 128, 128, var(--card-border-alpha));
+
+	box-shadow: 0 20px 60px -15px rgba(0, 0, 0, var(--card-shadow-alpha)),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.card-front-inner {
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	gap: 1rem;
+
+	z-index: 2;
+}
+
+.card-front-icon {
+	font-size: 3.5rem;
+
+	opacity: 0.9;
+}
+
+.card-front-title {
+	font-family: var(--font-display);
+
+	font-size: 1.5rem;
+
+	font-weight: 700;
+
+	text-align: center;
+
+	opacity: 0.8;
+}
+
+.card-front-hint {
+	font-size: 0.75rem;
+
+	color: var(--text-muted);
+
+	margin-top: 1rem;
+
+	animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 0.5;
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+/* Decorative inner border on front */
+
+.card-front::before {
+	content: "";
+
+	position: absolute;
+
+	inset: 8px;
+
+	border: 1px solid rgba(255, 255, 255, 0.08);
+
+	border-radius: calc(var(--card-radius) - 4px);
+
+	pointer-events: none;
+
+	z-index: 1;
+}
+
+/* Decorative gradient overlay on front */
+
+.card-front::after {
+	content: "";
+
+	position: absolute;
+
+	width: 200%;
+
+	height: 200%;
+
+	top: -50%;
+
+	left: -50%;
+
+	background: radial-gradient(
+			circle at 30% 30%,
+
+			rgba(233, 69, 96, 0.08),
+			transparent 50%
+		),
+		radial-gradient(
+			circle at 70% 70%,
+
+			rgba(167, 139, 250, 0.08),
+			transparent 50%
+		);
+
+	pointer-events: none;
+}
+
+/* Corner floral decorations on card front */
+
+.card-front-corner {
+	position: absolute;
+
+	font-size: 1.2rem;
+
+	opacity: 0.2;
+
+	z-index: 1;
+
+	pointer-events: none;
+
+	line-height: 1;
+}
+
+.card-front-corner.top-left {
+	top: 14px;
+
+	left: 14px;
+}
+
+.card-front-corner.top-right {
+	top: 14px;
+
+	right: 14px;
+
+	transform: scaleX(-1);
+}
+
+.card-front-corner.bottom-left {
+	bottom: 14px;
+
+	left: 14px;
+
+	transform: scaleY(-1);
+}
+
+.card-front-corner.bottom-right {
+	bottom: 14px;
+
+	right: 14px;
+
+	transform: scale(-1);
+}
+
+/* Edge ornaments */
+
+.card-edge-ornament {
+	position: absolute;
+
+	font-size: 0.6rem;
+
+	opacity: 0.18;
+
+	pointer-events: none;
+
+	z-index: 1;
+
+	line-height: 1;
+
+	color: var(--text-primary);
+}
+
+/* Bigger infinity symbol on back edges */
+
+.card-edge-ornament.back-edge {
+	font-size: 0.85rem;
+
+	opacity: 0.2;
+
+	font-weight: 700;
+}
+
+.card-edge-ornament.top {
+	top: 8px;
+
+	left: 50%;
+
+	transform: translateX(-50%);
+}
+
+.card-edge-ornament.bottom {
+	bottom: 8px;
+
+	left: 50%;
+
+	transform: translateX(-50%);
+}
+
+.card-edge-ornament.left {
+	left: 8px;
+
+	top: 50%;
+
+	transform: translateY(-50%);
+}
+
+.card-edge-ornament.right {
+	right: 8px;
+
+	top: 50%;
+
+	transform: translateY(-50%);
+}
+
+/* Ornamental inner frame */
+
+.card-ornament-frame {
+	position: absolute;
+
+	inset: 20px;
+
+	border: 1px solid rgba(255, 255, 255, 0.04);
+
+	border-radius: 8px;
+
+	pointer-events: none;
+
+	z-index: 1;
+}
+
+/* Card front subtitle */
+
+.card-front-subtitle {
+	font-size: 0.75rem;
+
+	color: var(--text-secondary);
+
+	letter-spacing: 2px;
+
+	text-transform: uppercase;
+
+	opacity: 0.5;
+}
+
+/* Back — Question face */
+
+.card-back {
+	background: var(--bg-secondary);
+
+	border: 2px solid rgba(128, 128, 128, var(--card-border-alpha));
+
+	box-shadow: 0 20px 60px -15px rgba(0, 0, 0, var(--card-shadow-alpha)),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+	transform: rotateY(180deg);
+
+	justify-content: center;
+
+	gap: 1.5rem;
+}
+
+/* Decorative inner border on back */
+
+.card-back::before {
+	content: "";
+
+	position: absolute;
+
+	inset: 8px;
+
+	border: 1px solid rgba(255, 255, 255, 0.06);
+
+	border-radius: calc(var(--card-radius) - 4px);
+
+	pointer-events: none;
+}
+
+/* Corner floral decorations on card back */
+
+.card-back-corner {
+	position: absolute;
+
+	font-size: 1rem;
+
+	opacity: 0.15;
+
+	pointer-events: none;
+
+	line-height: 1;
+}
+
+.card-back-corner.top-left {
+	top: 14px;
+
+	left: 14px;
+}
+
+.card-back-corner.top-right {
+	top: 14px;
+
+	right: 14px;
+
+	transform: scaleX(-1);
+}
+
+.card-back-corner.bottom-left {
+	bottom: 14px;
+
+	left: 14px;
+
+	transform: scaleY(-1);
+}
+
+.card-back-corner.bottom-right {
+	bottom: 14px;
+
+	right: 14px;
+
+	transform: scale(-1);
+}
+
+.card-question-vi {
+	font-family: var(--font-display);
+
+	font-size: 1.2rem;
+
+	font-weight: 600;
+
+	line-height: 1.6;
+
+	text-align: center;
+
+	color: var(--text-primary);
+
+	z-index: 1;
+}
+
+.card-divider {
+	width: 40px;
+
+	height: 2px;
+
+	border-radius: 1px;
+
+	background: var(--accent);
+
+	opacity: 0.5;
+}
+
+.card-question-en {
+	font-size: 0.95rem;
+
+	font-style: italic;
+
+	line-height: 1.6;
+
+	text-align: center;
+
+	color: var(--text-secondary);
+
+	z-index: 1;
+}
+
+.card-back-category {
+	position: absolute;
+
+	bottom: 1.25rem;
+
+	font-size: 0.7rem;
+
+	color: var(--text-muted);
+
+	letter-spacing: 1px;
+
+	text-transform: uppercase;
+}
+
+/* ---------- Swipe Hint ---------- */
+
+.swipe-hint {
+	position: absolute;
+
+	bottom: 0;
+
+	left: 50%;
+
+	transform: translateX(-50%);
+
+	pointer-events: none;
+
+	opacity: 0;
+
+	transition: opacity 0.5s ease;
+}
+
+.swipe-hint.visible {
+	opacity: 1;
+}
+
+.swipe-hint-text {
+	font-size: 0.8rem;
+
+	color: var(--text-muted);
+
+	white-space: nowrap;
+}
+
+/* ---------- Play Footer ---------- */
+
+.play-footer {
+	padding: 0.75rem 1rem 1.5rem;
+
+	text-align: center;
+}
+
+.tap-hint {
+	font-size: 0.75rem;
+
+	color: var(--text-muted);
+}
+
+/* ==========================================
+
+   MODAL
+
+   ========================================== */
+
+.modal-overlay {
+	position: fixed;
+
+	inset: 0;
+
+	z-index: 100;
+
+	background: var(--modal-bg);
+
+	backdrop-filter: blur(8px);
+
+	-webkit-backdrop-filter: blur(8px);
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	padding: 1.5rem;
+
+	opacity: 0;
+
+	visibility: hidden;
+
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.visible {
+	opacity: 1;
+
+	visibility: visible;
+}
+
+.modal-content {
+	background: var(--bg-secondary);
+
+	border-radius: 20px;
+
+	padding: 2.5rem 2rem;
+
+	text-align: center;
+
+	max-width: 340px;
+
+	width: 100%;
+
+	transform: scale(0.9);
+
+	transition: transform 0.3s ease;
+}
+
+.modal-overlay.visible .modal-content {
+	transform: scale(1);
+}
+
+.modal-icon {
+	font-size: 3rem;
+
+	margin-bottom: 1rem;
+}
+
+.modal-content h2 {
+	font-family: var(--font-display);
+
+	font-size: 1.5rem;
+
+	margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+	color: var(--text-secondary);
+
+	font-size: 0.9rem;
+
+	margin-bottom: 1.5rem;
+
+	line-height: 1.5;
+}
+
+.modal-actions {
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 0.75rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+	padding: 0.875rem 1.5rem;
+
+	border: none;
+
+	border-radius: 12px;
+
+	font-family: var(--font-body);
+
+	font-size: 1rem;
+
+	font-weight: 600;
+
+	cursor: pointer;
+
+	transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:active {
+	transform: scale(0.97);
+}
+
+.btn-primary {
+	background: var(--accent);
+
+	color: white;
+}
+
+.btn-secondary {
+	background: var(--btn-bg);
+
+	color: var(--text-primary);
+}
+
+/* ==========================================
+
+   THEME TOGGLE
+
+   ========================================== */
+
+.theme-toggle {
+	width: 44px;
+
+	height: 44px;
+
+	display: flex;
+
+	align-items: center;
+
+	justify-content: center;
+
+	background: var(--btn-bg);
+
+	border: none;
+
+	border-radius: 12px;
+
+	cursor: pointer;
+
+	font-size: 1.25rem;
+
+	transition: background 0.2s ease, transform 0.3s ease;
+
+	color: var(--text-primary);
+
+	position: relative;
+
+	overflow: hidden;
+}
+
+.theme-toggle:active {
+	background: var(--btn-active-bg);
+
+	transform: scale(0.92);
+}
+
+.theme-toggle .theme-icon {
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover .theme-icon {
+	transform: rotate(30deg);
+}
+
+/* Toggle on home screen */
+
+.home-theme-toggle {
+	position: absolute;
+
+	top: 1.25rem;
+
+	right: 1.25rem;
+
+	z-index: 20;
+}
+
+/* Toggle on cover screen */
+
+.cover-theme-toggle {
+	position: absolute;
+
+	top: 1.25rem;
+
+	right: 1.25rem;
+
+	z-index: 20;
+}
+
+/* Smooth body transitions for theme change */
+
+body,
+.cover-container,
+.category-card,
+.modal-content,
+.card-face {
+	transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Light theme specific overrides */
+
+[data-theme="light"] .cover-card {
+	background: var(--bg-card-front);
+
+	border-color: rgba(200, 170, 160, 0.25);
+
+	box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .cover-card-1 {
+	border-color: rgba(233, 69, 96, 0.25);
+
+	background: linear-gradient(145deg, rgba(233, 69, 96, 0.1), transparent), var(--bg-card-front);
+}
+
+[data-theme="light"] .category-card {
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .card-front::before {
+	border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .card-back::before {
+	border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .card-ornament-frame {
+	border-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .floating-heart {
+	color: rgba(233, 69, 96, 0.45);
+}
+
+[data-theme="light"] .deep-card.stack-1 {
+	filter: brightness(0.95);
+}
+
+[data-theme="light"] .deep-card.stack-2 {
+	filter: brightness(0.9);
+}
+
+/* ==========================================
+
+   SPECIAL CARD ANIMATIONS
+
+   ========================================== */
+
+/* Heart burst particle container */
+
+.card-particles {
+	position: absolute;
+
+	inset: 0;
+
+	pointer-events: none;
+
+	z-index: 50;
+
+	overflow: visible;
+}
+
+.card-particle {
+	position: absolute;
+
+	left: 50%;
+
+	top: 50%;
+
+	font-size: 1.2rem;
+
+	opacity: 0;
+
+	pointer-events: none;
+
+	animation: particleBurst 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes particleBurst {
+	0% {
+		transform: translate(-50%, -50%) translate(0, 0) scale(0.3) rotate(0deg);
+
+		opacity: 1;
+	}
+
+	30% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translate(-50%, -50%) translate(var(--px), var(--py)) scale(0.8) rotate(var(--rot));
+
+		opacity: 0;
+	}
+}
+
+/* Sparkle shimmer on special card */
+
+.card-special-glow {
+	position: absolute;
+
+	inset: -4px;
+
+	border-radius: calc(var(--card-radius) + 4px);
+
+	pointer-events: none;
+
+	z-index: -1;
+
+	opacity: 0;
+
+	animation: specialGlow 1.6s ease-out forwards;
+}
+
+@keyframes specialGlow {
+	0% {
+		opacity: 0;
+
+		box-shadow: 0 0 0 0 transparent;
+	}
+
+	20% {
+		opacity: 1;
+
+		box-shadow: 0 0 20px var(--glow-color, rgba(233, 69, 96, 0.5)),
+			0 0 60px var(--glow-color, rgba(233, 69, 96, 0.2));
+	}
+
+	100% {
+		opacity: 0;
+
+		box-shadow: 0 0 40px var(--glow-color, rgba(233, 69, 96, 0)),
+			0 0 80px var(--glow-color, rgba(233, 69, 96, 0));
+	}
+}
+
+/* Shimmer sweep across card */
+
+.card-shimmer {
+	position: absolute;
+
+	inset: 0;
+
+	border-radius: var(--card-radius);
+
+	pointer-events: none;
+
+	z-index: 10;
+
+	overflow: hidden;
+}
+
+.card-shimmer::after {
+	content: "";
+
+	position: absolute;
+
+	top: 0;
+
+	left: -100%;
+
+	width: 60%;
+
+	height: 100%;
+
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.12),
+		rgba(255, 255, 255, 0.05),
+		transparent
+	);
+
+	animation: shimmerSweep 1s 0.2s ease-out forwards;
+}
+
+@keyframes shimmerSweep {
+	0% {
+		left: -60%;
+	}
+
+	100% {
+		left: 120%;
+	}
+}
+
+/* Special card entrance bounce */
+
+@keyframes specialEntrance {
+	0% {
+		opacity: 0;
+
+		transform: scale(0.6) translateY(30px) rotate(-3deg);
+	}
+
+	50% {
+		opacity: 1;
+
+		transform: scale(1.06) translateY(-8px) rotate(1deg);
+	}
+
+	75% {
+		transform: scale(0.97) translateY(3px) rotate(-0.5deg);
+	}
+
+	100% {
+		opacity: 1;
+
+		transform: scale(1) translateY(0) rotate(0deg);
+	}
+}
+
+.deep-card.special-entrance {
+	animation: specialEntrance 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards !important;
+}
+
+/* ==========================================
+
+   RESPONSIVE — TABLET & UP
+
+   ========================================== */
+
+@media (min-width: 600px) {
+	:root {
+		--card-width: 400px;
+
+		--card-height: 560px;
+	}
+
+	.home-container {
+		padding: 3rem 2rem;
+
+		max-width: 600px;
+
+		margin: 0 auto;
+	}
+
+	.app-title {
+		font-size: 3rem;
+	}
+
+	.cover-title {
+		font-size: 3.5rem;
+	}
+
+	.app-subtitle {
+		font-size: 1rem;
+
+		max-width: 400px;
+	}
+
+	.category-grid {
+		grid-template-columns: repeat(3, 1fr);
+
+		gap: 1.25rem;
+	}
+
+	.category-card {
+		padding: 2rem 1.25rem;
+	}
+
+	.card-question-vi {
+		font-size: 1.35rem;
+	}
+
+	.card-question-en {
+		font-size: 1.05rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	:root {
+		--card-width: 420px;
+
+		--card-height: 580px;
+	}
+
+	.home-container {
+		max-width: 800px;
+	}
+
+	.category-grid {
+		grid-template-columns: repeat(3, 1fr);
+
+		gap: 1.5rem;
+	}
+
+	.category-card {
+		padding: 2.25rem 1.5rem;
+
+		transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.category-card:hover {
+		transform: translateY(-4px);
+	}
+}
+
+/* ---------- Landscape phone fix ---------- */
+
+@media (max-height: 500px) and (orientation: landscape) {
+	:root {
+		--card-height: 75vh;
+	}
+
+	.home-header {
+		margin-bottom: 1rem;
+	}
+
+	.logo-icon {
+		font-size: 2rem;
+	}
+
+	.app-title {
+		font-size: 1.75rem;
+	}
+
+	.app-subtitle {
+		display: none;
+	}
+
+	.play-footer {
+		padding: 0.25rem 1rem 0.5rem;
+	}
+}
+
+/* ---------- Safe area (notch devices) ---------- */
+
+@supports (padding-top: env(safe-area-inset-top)) {
+	.play-header {
+		padding-top: calc(1rem + env(safe-area-inset-top));
+	}
+
+	.play-footer {
+		padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+	}
+
+	.home-container {
+		padding-top: calc(2rem + env(safe-area-inset-top));
+
+		padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+	}
+
+	.cover-footer {
+		bottom: calc(2rem + env(safe-area-inset-bottom));
+	}
+}

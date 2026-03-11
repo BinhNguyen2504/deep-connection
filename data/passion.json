@@ -1,0 +1,129 @@
+{
+	"id": "passion",
+	"name_vi": "Giữ Lửa",
+	"name_en": "Keep the Spark",
+	"color": "#FF4757",
+	"icon": "🔥",
+	"questions": [
+		{
+			"id": 1,
+			"tag": "light",
+			"text_vi": "Bạn thích tạo bất ngờ hay được người yêu tạo bất ngờ? Kiểu bất ngờ nào khiến bạn vui nhất?",
+			"text_en": "Do you prefer creating surprises or being surprised? What kind of surprise makes you happiest?"
+		},
+		{
+			"id": 2,
+			"tag": "light",
+			"text_vi": "Buổi hẹn hò lý tưởng trong mơ của bạn sẽ diễn ra như thế nào? Hãy vẽ ra bức tranh đó.",
+			"text_en": "What would your ideal dream date look like? Paint that picture."
+		},
+		{
+			"id": 3,
+			"tag": "light",
+			"text_vi": "Hãy kể về một hành động lãng mạn kiểu cổ điển mà bạn trân trọng.",
+			"text_en": "Tell me about an old-fashioned romantic gesture that you treasure."
+		},
+		{
+			"id": 4,
+			"tag": "medium",
+			"text_vi": "Đam mê trong tình yêu có nghĩa là gì với bạn? Hãy mô tả chi tiết.",
+			"text_en": "What does passion in love mean to you? Describe it in detail."
+		},
+		{
+			"id": 5,
+			"tag": "medium",
+			"text_vi": "Khoảnh khắc lãng mạn nhất mà bạn từng trải qua là gì? Hãy kể lại.",
+			"text_en": "What is the most romantic moment you've ever experienced? Tell me about it."
+		},
+		{
+			"id": 6,
+			"tag": "medium",
+			"text_vi": "Điều gì khiến một nụ hôn trở nên thực sự đáng nhớ? Hãy mô tả.",
+			"text_en": "What makes a kiss truly memorable? Describe it."
+		},
+		{
+			"id": 7,
+			"tag": "medium",
+			"text_vi": "Giây phút nào trong ngày bạn cảm thấy gần gũi và kết nối nhất với người yêu?",
+			"text_en": "What moment during the day do you feel closest and most connected to your partner?"
+		},
+		{
+			"id": 8,
+			"tag": "medium",
+			"text_vi": "Nếu được viết một bức thư tình cho người yêu ngay bây giờ, dòng đầu tiên sẽ là gì?",
+			"text_en": "If you wrote a love letter to your partner right now, what would the first line be?"
+		},
+		{
+			"id": 9,
+			"tag": "deep",
+			"text_vi": "Điều gì khiến bạn cảm thấy kết nối sâu sắc nhất với người mình yêu?",
+			"text_en": "What makes you feel most deeply connected to the person you love?"
+		},
+		{
+			"id": 10,
+			"tag": "deep",
+			"text_vi": "Bạn sẽ làm gì để giữ ngọn lửa tình yêu cháy mãi sau nhiều năm bên nhau?",
+			"text_en": "What would you do to keep the flame of love burning after many years together?"
+		},
+		{
+			"id": 11,
+			"tag": "deep",
+			"text_vi": "Điều gì giữ cho đam mê không tàn lụi sau giai đoạn 'trăng mật' theo bạn?",
+			"text_en": "What keeps passion alive after the honeymoon phase in your view?"
+		},
+		{
+			"id": 12,
+			"tag": "deep",
+			"text_vi": "Nếu có thể sống lại một khoảnh khắc lãng mạn, bạn sẽ chọn khoảnh khắc nào và vì sao?",
+			"text_en": "If you could relive one romantic moment, which would you choose and why?"
+		},
+		{
+			"id": 13,
+			"tag": "deep",
+			"text_vi": "Giữa tình yêu cháy bỏng mãnh liệt và tình yêu êm đềm sâu lắng, bạn thiên về phong cách nào? Vì sao?",
+			"text_en": "Between intense burning love and calm deep love, which style do you lean towards? Why?"
+		},
+		{
+			"id": 14,
+			"tag": "deep",
+			"text_vi": "Điều gì khiến bạn cảm thấy được khao khát và mong muốn nhất bởi người mình yêu?",
+			"text_en": "What makes you feel most desired and wanted by the person you love?"
+		},
+		{
+			"id": 15,
+			"tag": "deep",
+			"text_vi": "Điều điên rồ nhất bạn sẵn sàng làm vì tình yêu là gì?",
+			"text_en": "What's the craziest thing you'd be willing to do for love?"
+		},
+		{
+			"id": 16,
+			"tag": "light",
+			"text_vi": "Nếu hôm nay chúng ta trốn việc/học và đi chơi, bạn muốn chúng ta sẽ làm trò điên rồ gì?",
+			"text_en": "If we skipped work/school today and went on a date, what crazy thing would you want us to do?"
+		},
+		{
+			"id": 17,
+			"tag": "medium",
+			"text_vi": "Bạn thích mình trong trang phục nào nhất, hoặc khi mình đang làm hành động gì thì bạn thấy thu hút nhất?",
+			"text_en": "What outfit do you like me in the most, or what action makes you find me most attractive?"
+		},
+		{
+			"id": 18,
+			"tag": "deep",
+			"text_vi": "Có một 'fantasy' (ảo mộng) hoặc mong muốn thầm kín nào trong sự thân mật mà bạn chưa từng kể với mình không?",
+			"text_en": "Do you have a secret fantasy or desire in intimacy that you've never told me?"
+		},
+		{
+			"id": 19,
+			"tag": "sensitive",
+			"text_vi": "Làm thế nào để chúng ta nói cho nhau nghe về những điều mình chưa thỏa mãn về mặt thể xác mà không làm tổn thương đối phương?",
+			"text_en": "How should we communicate our physical dissatisfactions without hurting each other?"
+		},
+		{
+			"id": 20,
+			"tag": "sensitive",
+			"text_vi": "Sự thay đổi về ngoại hình theo thời gian có ảnh hưởng đến sự hấp dẫn bạn dành cho mình không?",
+			"text_en": "Does physical change over time affect your attraction to me?"
+		}
+	]
+}
