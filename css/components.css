@@ -1,0 +1,106 @@
+/* ==========================================
+   THEME TOGGLE & SHARED COMPONENTS
+   ========================================== */
+.theme-toggle {
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--btn-bg);
+	border: none;
+	border-radius: 12px;
+	cursor: pointer;
+	font-size: 1.25rem;
+	transition: background 0.2s ease, transform 0.3s ease;
+	color: var(--text-primary);
+	position: relative;
+	overflow: hidden;
+}
+
+.theme-toggle:active {
+	background: var(--btn-active-bg);
+	transform: scale(0.92);
+}
+
+.theme-toggle .theme-icon {
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-toggle:hover .theme-icon {
+	transform: rotate(30deg);
+}
+
+/* Toggle on home screen */
+.home-theme-toggle {
+	position: absolute;
+	top: 1.25rem;
+	right: 1.25rem;
+	z-index: 20;
+}
+
+/* Toggle on cover screen */
+.cover-theme-toggle {
+	position: absolute;
+	top: 1.25rem;
+	right: 1.25rem;
+	z-index: 20;
+}
+
+/* Smooth body transitions for theme change */
+body,
+.cover-container,
+.category-card,
+.modal-content,
+.card-face {
+	transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Light theme specific overrides */
+[data-theme="light"] .cover-card {
+	background: var(--bg-card-front);
+	border-color: rgba(200, 170, 160, 0.25);
+	box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .cover-card-1 {
+	border-color: rgba(233, 69, 96, 0.25);
+	background: linear-gradient(145deg, rgba(233, 69, 96, 0.1), transparent), var(--bg-card-front);
+}
+
+[data-theme="light"] .category-card {
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .card-front::before {
+	border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .card-back::before {
+	border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .feedback-btn {
+	background: rgba(0, 0, 0, 0.05);
+	border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .btn-prev {
+	border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .card-ornament-frame {
+	border-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .floating-heart {
+	color: rgba(233, 69, 96, 0.45);
+}
+
+[data-theme="light"] .deep-card.stack-1 {
+	filter: brightness(0.95);
+}
+
+[data-theme="light"] .deep-card.stack-2 {
+	filter: brightness(0.9);
+}

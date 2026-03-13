@@ -1,0 +1,748 @@
+/* ==========================================
+   SCREEN 2 — CARD PLAY
+   ========================================== */
+.play-container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	height: 100dvh;
+}
+
+/* ---------- Play Header ---------- */
+.play-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem 1rem 0.5rem;
+	z-index: 20;
+	gap: 0.25rem;
+}
+
+.play-header-right {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.btn-icon {
+	width: 44px;
+	height: 44px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--btn-bg);
+	border: none;
+	border-radius: 12px;
+	color: var(--text-primary);
+	cursor: pointer;
+	transition: background 0.2s ease;
+}
+
+.btn-icon:active {
+	background: var(--btn-active-bg);
+}
+
+.play-header-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.15rem;
+}
+
+.category-label {
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+.card-counter {
+	font-size: 0.75rem;
+	color: var(--text-muted);
+}
+
+/* ---------- Card Area ---------- */
+.card-area {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	padding: 1rem;
+	overflow: hidden;
+}
+
+.card-stack {
+	position: relative;
+	width: var(--card-width);
+	height: var(--card-height);
+	perspective: 1200px;
+	-webkit-perspective: 1200px;
+}
+
+/* Stack shadow — simulates more cards below */
+.card-stack::before,
+.card-stack::after {
+	content: "";
+	position: absolute;
+	border-radius: var(--card-radius);
+	background: rgba(15, 52, 96, 0.4);
+	pointer-events: none;
+	transition: opacity 0.4s ease;
+}
+
+.card-stack::before {
+	bottom: -6px;
+	left: 4px;
+	right: 4px;
+	height: 12px;
+	border-bottom-left-radius: var(--card-radius);
+	border-bottom-right-radius: var(--card-radius);
+	background: var(--stack-bg);
+	z-index: -1;
+}
+
+.card-stack::after {
+	bottom: -11px;
+	left: 8px;
+	right: 8px;
+	height: 12px;
+	border-bottom-left-radius: var(--card-radius);
+	border-bottom-right-radius: var(--card-radius);
+	background: var(--stack-bg-2);
+	z-index: -2;
+}
+
+/* Hide stack shadows on last card */
+.card-stack.last-card::before,
+.card-stack.last-card::after {
+	opacity: 0;
+}
+
+/* ---------- Deep Connection Card ---------- */
+.deep-card {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: var(--card-radius);
+	cursor: pointer;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transition: transform var(--transition-flip) cubic-bezier(0.4, 0, 0.2, 1);
+	will-change: transform;
+}
+
+.deep-card.flipped {
+	transform: rotateY(180deg);
+}
+
+/* Card entrance animation */
+.deep-card.active-card {
+	z-index: 5;
+	filter: none;
+	cursor: pointer;
+	animation: cardEntrance 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes cardEntrance {
+	from {
+		opacity: 0;
+		transform: scale(0.9) translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+/* Stacked cards behind */
+.deep-card.stack-1 {
+	transform: scale(0.95) translateY(10px);
+	z-index: 1;
+	filter: brightness(0.7);
+	transition: transform 0.3s ease;
+}
+
+.deep-card.stack-2 {
+	transform: scale(0.9) translateY(20px);
+	z-index: 0;
+	filter: brightness(0.5);
+	transition: transform 0.3s ease;
+}
+
+/* Swiping state */
+.deep-card.swiping {
+	transition: none;
+}
+
+/* Shuffle animation — Phase 1: scatter cards */
+@keyframes shuffleScatter {
+	0% {
+		transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+		opacity: 1;
+	}
+	40% {
+		transform: translateX(var(--scatter-x, 30px)) translateY(var(--scatter-y, -50px))
+			rotate(var(--scatter-rot, 15deg)) scale(0.88);
+		opacity: 0.9;
+	}
+	70% {
+		transform: translateX(calc(var(--scatter-x, 30px) * 0.5)) translateY(-20px)
+			rotate(calc(var(--scatter-rot, 15deg) * -0.6)) scale(0.82);
+		opacity: 0.5;
+	}
+	100% {
+		transform: translateX(0) translateY(20px) rotate(0deg) scale(0.75);
+		opacity: 0;
+	}
+}
+
+.card-stack.shuffling .deep-card {
+	animation: shuffleScatter 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	pointer-events: none;
+}
+
+.card-stack.shuffling .deep-card:nth-child(1) {
+	--scatter-x: -60px;
+	--scatter-y: -55px;
+	--scatter-rot: -18deg;
+	animation-delay: 0s;
+}
+
+.card-stack.shuffling .deep-card:nth-child(2) {
+	--scatter-x: 50px;
+	--scatter-y: -40px;
+	--scatter-rot: 14deg;
+	animation-delay: 0.06s;
+}
+
+.card-stack.shuffling .deep-card:nth-child(3) {
+	--scatter-x: -30px;
+	--scatter-y: -30px;
+	--scatter-rot: -8deg;
+	animation-delay: 0.12s;
+}
+
+/* Shuffle animation — Phase 2: deal cards back in */
+@keyframes shuffleDeal {
+	0% {
+		transform: translateY(-80px) rotate(8deg) scale(0.7);
+		opacity: 0;
+	}
+	50% {
+		transform: translateY(8px) rotate(-2deg) scale(1.03);
+		opacity: 0.8;
+	}
+	100% {
+		transform: translateY(0) rotate(0deg) scale(1);
+		opacity: 1;
+	}
+}
+
+.deep-card.shuffle-deal {
+	animation: shuffleDeal 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards !important;
+}
+
+@keyframes cardReturnIn {
+	from {
+		transform: translateX(75%) rotateZ(10deg);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0) rotateZ(0deg);
+		opacity: 1;
+	}
+}
+
+.deep-card.card-return-in {
+	animation: cardReturnIn 0.38s cubic-bezier(0.22, 1, 0.36, 1) both !important;
+	pointer-events: none;
+}
+
+/* ---------- Card Face (Front & Back) ---------- */
+.card-face {
+	position: absolute;
+	inset: 0;
+	border-radius: var(--card-radius);
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem 1.5rem;
+	/* clip-path instead of overflow:hidden — overflow:hidden breaks
+     backface-visibility on iOS Safari, causing both card faces
+     to render simultaneously when flipped. */
+	clip-path: inset(0 round var(--card-radius));
+}
+
+/* Front — Cover face */
+.card-front {
+	background: var(--bg-card-front);
+	border: 2px solid rgba(128, 128, 128, var(--card-border-alpha));
+	box-shadow: 0 20px 60px -15px rgba(0, 0, 0, var(--card-shadow-alpha)),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.card-front-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	z-index: 2;
+}
+
+.card-front-icon {
+	font-size: 3.5rem;
+	opacity: 0.9;
+}
+
+.card-front-title {
+	font-family: var(--font-display);
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+	opacity: 0.8;
+}
+
+.card-front-hint {
+	font-size: 0.75rem;
+	color: var(--text-muted);
+	margin-top: 1rem;
+	animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+/* Decorative inner border on front */
+.card-front::before {
+	content: "";
+	position: absolute;
+	inset: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: calc(var(--card-radius) - 4px);
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* Decorative gradient overlay on front */
+.card-front::after {
+	content: "";
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	top: -50%;
+	left: -50%;
+	background: radial-gradient(circle at 30% 30%, rgba(233, 69, 96, 0.08), transparent 50%),
+		radial-gradient(circle at 70% 70%, rgba(167, 139, 250, 0.08), transparent 50%);
+	pointer-events: none;
+}
+
+/* Corner floral decorations on card front */
+.card-front-corner {
+	position: absolute;
+	font-size: 1.2rem;
+	opacity: 0.2;
+	z-index: 1;
+	pointer-events: none;
+	line-height: 1;
+}
+
+.card-front-corner.top-left {
+	top: 14px;
+	left: 14px;
+}
+
+.card-front-corner.top-right {
+	top: 14px;
+	right: 14px;
+	transform: scaleX(-1);
+}
+
+.card-front-corner.bottom-left {
+	bottom: 14px;
+	left: 14px;
+	transform: scaleY(-1);
+}
+
+.card-front-corner.bottom-right {
+	bottom: 14px;
+	right: 14px;
+	transform: scale(-1);
+}
+
+/* Edge ornaments */
+.card-edge-ornament {
+	position: absolute;
+	font-size: 0.6rem;
+	opacity: 0.18;
+	pointer-events: none;
+	z-index: 1;
+	line-height: 1;
+	color: var(--text-primary);
+}
+
+/* Bigger infinity symbol on back edges */
+.card-edge-ornament.back-edge {
+	font-size: 0.85rem;
+	opacity: 0.2;
+	font-weight: 700;
+}
+
+.card-edge-ornament.top {
+	top: 8px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.card-edge-ornament.bottom {
+	bottom: 8px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.card-edge-ornament.left {
+	left: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.card-edge-ornament.right {
+	right: 8px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* Ornamental inner frame */
+.card-ornament-frame {
+	position: absolute;
+	inset: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.04);
+	border-radius: 8px;
+	pointer-events: none;
+	z-index: 1;
+}
+
+/* Card front subtitle */
+.card-front-subtitle {
+	font-size: 0.75rem;
+	color: var(--text-secondary);
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	opacity: 0.5;
+}
+
+/* Back — Question face */
+.card-back {
+	background: var(--bg-secondary);
+	border: 2px solid rgba(128, 128, 128, var(--card-border-alpha));
+	box-shadow: 0 20px 60px -15px rgba(0, 0, 0, var(--card-shadow-alpha)),
+		inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	transform: rotateY(180deg);
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+/* Decorative inner border on back */
+.card-back::before {
+	content: "";
+	position: absolute;
+	inset: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: calc(var(--card-radius) - 4px);
+	pointer-events: none;
+}
+
+/* Corner floral decorations on card back */
+.card-back-corner {
+	position: absolute;
+	font-size: 1rem;
+	opacity: 0.15;
+	pointer-events: none;
+	line-height: 1;
+}
+
+.card-back-corner.top-left {
+	top: 14px;
+	left: 14px;
+}
+
+.card-back-corner.top-right {
+	top: 14px;
+	right: 14px;
+	transform: scaleX(-1);
+}
+
+.card-back-corner.bottom-left {
+	bottom: 14px;
+	left: 14px;
+	transform: scaleY(-1);
+}
+
+.card-back-corner.bottom-right {
+	bottom: 14px;
+	right: 14px;
+	transform: scale(-1);
+}
+
+.card-question-vi {
+	font-family: var(--font-display);
+	font-size: 1.2rem;
+	font-weight: 600;
+	line-height: 1.6;
+	text-align: center;
+	color: var(--text-primary);
+	z-index: 1;
+}
+
+/* Quote-mark wrapper */
+.card-question-wrap {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0;
+}
+
+.card-question-wrap::before,
+.card-question-wrap::after {
+	font-family: var(--font-display);
+	font-size: 3.5rem;
+	line-height: 0.6;
+	color: var(--accent);
+	opacity: 0.22;
+	pointer-events: none;
+	display: block;
+	align-self: flex-start;
+}
+
+.card-question-wrap::before {
+	content: "\201C";
+	margin-bottom: 0.15rem;
+}
+
+.card-question-wrap::after {
+	content: "\201D";
+	align-self: flex-end;
+	margin-top: 0.15rem;
+}
+
+.card-divider {
+	width: 40px;
+	height: 2px;
+	border-radius: 1px;
+	background: var(--accent);
+	opacity: 0.5;
+}
+
+.card-question-en {
+	font-size: 0.95rem;
+	font-style: italic;
+	line-height: 1.6;
+	text-align: center;
+	color: var(--text-secondary);
+	z-index: 1;
+}
+
+.card-back-category {
+	position: absolute;
+	bottom: 1.25rem;
+	font-size: 0.7rem;
+	color: var(--text-muted);
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+/* ---------- Tag Level Badge ---------- */
+.card-tag-badge {
+	position: absolute;
+	top: 1.1rem;
+	right: 1rem;
+	font-size: 0.55rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	padding: 0.18rem 0.48rem;
+	border-radius: 20px;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.card-tag-badge.tag-light {
+	background: rgba(255, 255, 255, 0.05);
+	color: var(--text-muted);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-tag-badge.tag-medium {
+	background: rgba(251, 191, 36, 0.1);
+	color: #fbbf24;
+	border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.card-tag-badge.tag-deep {
+	background: rgba(167, 139, 250, 0.13);
+	color: #a78bfa;
+	border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.card-tag-badge.tag-sensitive {
+	background: rgba(233, 69, 96, 0.13);
+	color: #e94560;
+	border: 1px solid rgba(233, 69, 96, 0.28);
+}
+
+/* Deep / Sensitive card-back visual emphasis */
+.deep-card[data-tag="deep"] .card-back {
+	background: linear-gradient(160deg, rgba(167, 139, 250, 0.06) 0%, var(--bg-secondary) 55%);
+}
+
+.deep-card[data-tag="sensitive"] .card-back {
+	background: linear-gradient(160deg, rgba(233, 69, 96, 0.07) 0%, var(--bg-secondary) 55%);
+}
+
+.deep-card[data-tag="deep"] .card-back-corner,
+.deep-card[data-tag="sensitive"] .card-back-corner {
+	opacity: 0.3;
+}
+
+.deep-card[data-tag="deep"] .card-back::before {
+	border-color: rgba(167, 139, 250, 0.1);
+}
+
+.deep-card[data-tag="sensitive"] .card-back::before {
+	border-color: rgba(233, 69, 96, 0.1);
+}
+
+/* ---------- Feedback Buttons (like/dislike) ---------- */
+.card-feedback {
+	position: absolute;
+	bottom: 3rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 0.75rem;
+	z-index: 3;
+}
+
+.feedback-btn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.15rem;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: 12px;
+	padding: 0.45rem 0.9rem;
+	cursor: pointer;
+	color: var(--text-secondary);
+	font-family: var(--font-body);
+	transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	user-select: none;
+	pointer-events: auto;
+}
+
+.feedback-btn:active {
+	transform: scale(0.93);
+}
+
+.feedback-icon {
+	font-size: 1.1rem;
+	line-height: 1;
+	pointer-events: none;
+}
+
+.feedback-count {
+	font-size: 0.65rem;
+	font-weight: 600;
+	line-height: 1;
+	pointer-events: none;
+}
+
+.feedback-btn.voted.feedback-like {
+	background: rgba(74, 222, 128, 0.18);
+	border-color: rgba(74, 222, 128, 0.4);
+	color: #4ade80;
+}
+
+.feedback-btn.voted.feedback-dislike {
+	background: rgba(233, 69, 96, 0.18);
+	border-color: rgba(233, 69, 96, 0.4);
+	color: var(--accent);
+}
+
+/* ---------- Swipe Hint ---------- */
+.swipe-hint {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.swipe-hint.visible {
+	opacity: 1;
+}
+
+.swipe-hint-text {
+	font-size: 0.8rem;
+	color: var(--text-muted);
+	white-space: nowrap;
+}
+
+/* ---------- Play Footer ---------- */
+.play-footer {
+	padding: 0.75rem 1rem 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.tap-hint {
+	flex: 1;
+	text-align: center;
+	font-size: 0.75rem;
+	color: var(--text-muted);
+}
+
+/* ---------- Prev Card Button ---------- */
+.btn-prev {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+	background: var(--btn-bg);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	color: var(--text-secondary);
+	font-size: 0.75rem;
+	font-family: var(--font-body);
+	padding: 0.45rem 0.8rem;
+	cursor: pointer;
+	transition: background 0.2s ease, opacity 0.2s ease;
+	white-space: nowrap;
+	flex-shrink: 0;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.btn-prev:disabled {
+	opacity: 0.28;
+	cursor: not-allowed;
+}
+
+.btn-prev:not(:disabled):active {
+	background: var(--btn-active-bg);
+}

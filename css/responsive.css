@@ -1,0 +1,125 @@
+/* ==========================================
+   RESPONSIVE — TABLET & UP
+   ========================================== */
+@media (min-width: 600px) {
+	:root {
+		--card-width: 400px;
+		--card-height: 560px;
+	}
+
+	.home-container {
+		padding: 3rem 2rem;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.app-title {
+		font-size: 3rem;
+	}
+
+	.cover-title {
+		font-size: 3.5rem;
+	}
+
+	.app-subtitle {
+		font-size: 1rem;
+		max-width: 400px;
+	}
+
+	.category-grid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+	}
+
+	.category-card {
+		padding: 2rem 1.25rem;
+	}
+
+	.card-question-vi {
+		font-size: 1.35rem;
+	}
+
+	.card-question-en {
+		font-size: 1.05rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	:root {
+		--card-width: 420px;
+		--card-height: 580px;
+	}
+
+	.home-container {
+		max-width: 800px;
+	}
+
+	.category-grid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+	}
+
+	.category-card {
+		padding: 2.25rem 1.5rem;
+		transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.category-card:hover {
+		transform: translateY(-4px);
+	}
+}
+
+/* ---------- Landscape phone fix ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+	:root {
+		--card-height: 75vh;
+	}
+
+	.home-header {
+		margin-bottom: 1rem;
+	}
+
+	.logo-icon {
+		font-size: 2rem;
+	}
+
+	.app-title {
+		font-size: 1.75rem;
+	}
+
+	.app-subtitle {
+		display: none;
+	}
+
+	.play-footer {
+		padding: 0.25rem 1rem 0.5rem;
+	}
+}
+
+/* ---------- Safe area (notch devices) ---------- */
+@supports (padding-top: env(safe-area-inset-top)) {
+	.play-header {
+		padding-top: calc(1rem + env(safe-area-inset-top));
+	}
+
+	.play-footer {
+		padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+	}
+
+	.home-container {
+		padding-top: calc(2rem + env(safe-area-inset-top));
+		padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+	}
+
+	.cover-footer {
+		bottom: calc(2rem + env(safe-area-inset-bottom));
+	}
+
+	.info-header {
+		padding-top: calc(1rem + env(safe-area-inset-top));
+	}
+
+	.info-content {
+		padding-bottom: calc(3rem + env(safe-area-inset-bottom));
+	}
+}

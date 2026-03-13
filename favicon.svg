@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        .favicon-bg { fill: #1a1a2e; }
+        .favicon-heart { fill: #e94560; }
+      }
+      @media (prefers-color-scheme: light) {
+        .favicon-bg { fill: #faf5f0; }
+        .favicon-heart { fill: #e94560; }
+      }
+    </style>
+  </defs>
+  <rect class="favicon-bg" width="100" height="100" rx="20"/>
+  <path class="favicon-heart" d="M50,85 C30,70 15,55 15,42 C15,30 22,22 30,22 C37,22 43,27 50,35 C57,27 63,22 70,22 C78,22 85,30 85,42 C85,55 70,70 50,85 Z"/>
+</svg>

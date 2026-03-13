@@ -1,0 +1,129 @@
+{
+	"id": "challenges",
+	"name_vi": "Góc Khuất",
+	"name_en": "Uncharted Waters",
+	"color": "#FFA502",
+	"icon": "🌧️",
+	"questions": [
+		{
+			"id": 1,
+			"tag": "light",
+			"text_vi": "Thói quen sống khác biệt (giờ giấc, sở thích ăn uống, sinh hoạt) nên được điều hòa ra sao?",
+			"text_en": "How should different living habits (schedules, food preferences, routines) be harmonized?"
+		},
+		{
+			"id": 2,
+			"tag": "medium",
+			"text_vi": "Khi gặp bất đồng, bạn thường xử lý cảm xúc của mình như thế nào trước khi nói chuyện?",
+			"text_en": "When there's disagreement, how do you usually handle your emotions before talking?"
+		},
+		{
+			"id": 3,
+			"tag": "medium",
+			"text_vi": "Khi cãi nhau, bạn thường là người chủ động làm hòa hay chờ đợi? Hãy kể về cách tiếp cận của bạn.",
+			"text_en": "During arguments, are you usually the one to make peace first or do you wait? Tell me about your approach."
+		},
+		{
+			"id": 4,
+			"tag": "medium",
+			"text_vi": "Khi tình yêu trở nên nhàm chán hoặc lặp lại, bạn sẽ làm gì để làm mới nó?",
+			"text_en": "When love becomes boring or repetitive, what do you do to refresh it?"
+		},
+		{
+			"id": 5,
+			"tag": "medium",
+			"text_vi": "Điều gì giúp bạn giữ bình tĩnh và sáng suốt khi đối mặt với mâu thuẫn trong tình yêu?",
+			"text_en": "What helps you stay calm and clear-headed when facing conflicts in love?"
+		},
+		{
+			"id": 6,
+			"tag": "medium",
+			"text_vi": "Khi công việc chiếm quá nhiều thời gian của một trong hai người, hai bạn nên xử lý thế nào?",
+			"text_en": "When work takes up too much of one person's time, how should you both handle it?"
+		},
+		{
+			"id": 7,
+			"tag": "deep",
+			"text_vi": "Giới hạn của sự tha thứ trong tình yêu nằm ở đâu theo bạn? Hãy chia sẻ quan điểm.",
+			"text_en": "Where does the limit of forgiveness lie in love for you? Share your view."
+		},
+		{
+			"id": 8,
+			"tag": "deep",
+			"text_vi": "Khi cảm thấy ghen tuông, bạn thường phản ứng như thế nào? Hãy mô tả.",
+			"text_en": "When you feel jealous, how do you usually react? Describe it."
+		},
+		{
+			"id": 9,
+			"tag": "deep",
+			"text_vi": "Điều gì là không thể chấp nhận được trong tình yêu đối với bạn? Hãy giải thích vì sao.",
+			"text_en": "What is truly unacceptable in love for you? Explain why."
+		},
+		{
+			"id": 10,
+			"tag": "deep",
+			"text_vi": "Khi phải chọn giữa lý trí và con tim, bạn thường thiên về bên nào? Hãy kể về một tình huống.",
+			"text_en": "When choosing between logic and heart, which do you lean towards? Tell me about a situation."
+		},
+		{
+			"id": 11,
+			"tag": "deep",
+			"text_vi": "Sự cân bằng giữa 'cho đi' và 'nhận lại' trong tình yêu nên như thế nào theo bạn?",
+			"text_en": "How should the balance between giving and receiving in love be according to you?"
+		},
+		{
+			"id": 12,
+			"tag": "deep",
+			"text_vi": "Khi bạn và người yêu có hai mục tiêu sống khác nhau, bạn sẽ xử lý ra sao?",
+			"text_en": "When you and your partner have different life goals, how do you handle it?"
+		},
+		{
+			"id": 13,
+			"tag": "deep",
+			"text_vi": "Khi cảm thấy không được tôn trọng trong mối quan hệ, bạn sẽ phản ứng như thế nào?",
+			"text_en": "When you feel disrespected in a relationship, how do you respond?"
+		},
+		{
+			"id": 14,
+			"tag": "sensitive",
+			"text_vi": "Áp lực từ gia đình hoặc xã hội có thể ảnh hưởng đến mối quan hệ như thế nào? Bạn sẽ đối mặt ra sao?",
+			"text_en": "How can pressure from family or society affect a relationship? How would you face it?"
+		},
+		{
+			"id": 15,
+			"tag": "sensitive",
+			"text_vi": "Khi hai người có quan điểm khác nhau về tiền bạc, cách giải quyết tốt nhất là gì?",
+			"text_en": "When two people have different views about money, what's the best way to resolve it?"
+		},
+		{
+			"id": 16,
+			"tag": "sensitive",
+			"text_vi": "Hai người nên đưa ra quyết định lớn cùng nhau như thế nào? Hãy mô tả quy trình lý tưởng.",
+			"text_en": "How should two people make big decisions together? Describe the ideal process."
+		},
+		{
+			"id": 17,
+			"tag": "sensitive",
+			"text_vi": "Khi ưu tiên cá nhân xung đột với nhu cầu của mối quan hệ, bạn sẽ cân bằng ra sao?",
+			"text_en": "When personal priorities conflict with relationship needs, how do you find balance?"
+		},
+		{
+			"id": 18,
+			"tag": "medium",
+			"text_vi": "Khi có mâu thuẫn, bạn thường xử lý như thế nào? Hãy mô tả cách tiếp cận của bạn.",
+			"text_en": "When there's conflict, how do you usually handle it? Describe your approach."
+		},
+		{
+			"id": 19,
+			"tag": "sensitive",
+			"text_vi": "Khi gia đình hai bên có văn hóa hoặc quan điểm khác nhau, bạn xử lý ra sao?",
+			"text_en": "When both families have different cultures or views, how do you handle it?"
+		},
+		{
+			"id": 20,
+			"tag": "sensitive",
+			"text_vi": "Mạng xã hội đang ảnh hưởng đến chúng ta như thế nào? Việc tương tác với người khác giới trên mạng có ranh giới ra sao?",
+			"text_en": "How is social media affecting us? What are the boundaries for interacting with the opposite sex online?"
+		}
+	]
+}

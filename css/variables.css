@@ -1,0 +1,48 @@
+/* ========================================
+   CSS Variables & Theme
+   ======================================== */
+
+/* ---------- CSS Variables ---------- */
+:root {
+	--bg-primary: #1a1a2e;
+	--bg-secondary: #16213e;
+	--bg-card-front: #0f3460;
+	--text-primary: #eaeaea;
+	--text-secondary: #a0aec0;
+	--text-muted: #64748b;
+	--accent: #e94560;
+	--card-radius: 20px;
+	--card-width: min(85vw, 360px);
+	--card-height: min(65vh, 520px);
+	--transition-flip: 0.6s;
+	--transition-slide: 0.35s;
+	--font-display: "Playfair Display", Georgia, serif;
+	--font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+	--card-border-alpha: 0.12;
+	--card-shadow-alpha: 0.5;
+	--ornament-alpha: 0.08;
+	--stack-bg: rgba(15, 52, 96, 0.4);
+	--stack-bg-2: rgba(15, 52, 96, 0.2);
+	--modal-bg: rgba(0, 0, 0, 0.7);
+	--btn-bg: rgba(255, 255, 255, 0.08);
+	--btn-active-bg: rgba(255, 255, 255, 0.16);
+}
+
+/* ---------- Light Theme ---------- */
+[data-theme="light"] {
+	--bg-primary: #faf5f0;
+	--bg-secondary: #fff5ee;
+	--bg-card-front: #fff0e8;
+	--text-primary: #2d1f2f;
+	--text-secondary: #6b5b6e;
+	--text-muted: #9b8b9e;
+	--accent: #e94560;
+	--card-border-alpha: 0.18;
+	--card-shadow-alpha: 0.15;
+	--ornament-alpha: 0.12;
+	--stack-bg: rgba(200, 170, 160, 0.35);
+	--stack-bg-2: rgba(200, 170, 160, 0.18);
+	--modal-bg: rgba(0, 0, 0, 0.4);
+	--btn-bg: rgba(0, 0, 0, 0.06);
+	--btn-active-bg: rgba(0, 0, 0, 0.12);
+}
