@@ -4,120 +4,123 @@
 
 /* Heart burst particle container */
 .card-particles {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	z-index: 50;
-	overflow: visible;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  overflow: visible;
 }
 
 .card-particle {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	font-size: 1.2rem;
-	opacity: 0;
-	pointer-events: none;
-	animation: particleBurst 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 1.2rem;
+  opacity: 0;
+  pointer-events: none;
+  animation: particleBurst 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 @keyframes particleBurst {
-	0% {
-		transform: translate(-50%, -50%) translate(0, 0) scale(0.3) rotate(0deg);
-		opacity: 1;
-	}
-	30% {
-		opacity: 1;
-	}
-	100% {
-		transform: translate(-50%, -50%) translate(var(--px), var(--py)) scale(0.8) rotate(var(--rot));
-		opacity: 0;
-	}
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0) scale(0.3) rotate(0deg);
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--px), var(--py)) scale(0.8)
+      rotate(var(--rot));
+    opacity: 0;
+  }
 }
 
 /* Sparkle shimmer on special card */
 .card-special-glow {
-	position: absolute;
-	inset: -4px;
-	border-radius: calc(var(--card-radius) + 4px);
-	pointer-events: none;
-	z-index: -1;
-	opacity: 0;
-	animation: specialGlow 1.6s ease-out forwards;
+  position: absolute;
+  inset: -4px;
+  border-radius: calc(var(--card-radius) + 4px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  animation: specialGlow 1.6s ease-out forwards;
 }
 
 @keyframes specialGlow {
-	0% {
-		opacity: 0;
-		box-shadow: 0 0 0 0 transparent;
-	}
-	20% {
-		opacity: 1;
-		box-shadow: 0 0 20px var(--glow-color, rgba(233, 69, 96, 0.5)),
-			0 0 60px var(--glow-color, rgba(233, 69, 96, 0.2));
-	}
-	100% {
-		opacity: 0;
-		box-shadow: 0 0 40px var(--glow-color, rgba(233, 69, 96, 0)),
-			0 0 80px var(--glow-color, rgba(233, 69, 96, 0));
-	}
+  0% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 transparent;
+  }
+  20% {
+    opacity: 1;
+    box-shadow:
+      0 0 20px var(--glow-color, rgba(233, 69, 96, 0.5)),
+      0 0 60px var(--glow-color, rgba(233, 69, 96, 0.2));
+  }
+  100% {
+    opacity: 0;
+    box-shadow:
+      0 0 40px var(--glow-color, rgba(233, 69, 96, 0)),
+      0 0 80px var(--glow-color, rgba(233, 69, 96, 0));
+  }
 }
 
 /* Shimmer sweep across card */
 .card-shimmer {
-	position: absolute;
-	inset: 0;
-	border-radius: var(--card-radius);
-	pointer-events: none;
-	z-index: 10;
-	overflow: hidden;
+  position: absolute;
+  inset: 0;
+  border-radius: var(--card-radius);
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
 }
 
 .card-shimmer::after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 60%;
-	height: 100%;
-	background: linear-gradient(
-		90deg,
-		transparent,
-		rgba(255, 255, 255, 0.12),
-		rgba(255, 255, 255, 0.05),
-		transparent
-	);
-	animation: shimmerSweep 1s 0.2s ease-out forwards;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmerSweep 1s 0.2s ease-out forwards;
 }
 
 @keyframes shimmerSweep {
-	0% {
-		left: -60%;
-	}
-	100% {
-		left: 120%;
-	}
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 120%;
+  }
 }
 
 /* Special card entrance bounce */
 @keyframes specialEntrance {
-	0% {
-		opacity: 0;
-		transform: scale(0.6) translateY(30px) rotate(-3deg);
-	}
-	50% {
-		opacity: 1;
-		transform: scale(1.06) translateY(-8px) rotate(1deg);
-	}
-	75% {
-		transform: scale(0.97) translateY(3px) rotate(-0.5deg);
-	}
-	100% {
-		opacity: 1;
-		transform: scale(1) translateY(0) rotate(0deg);
-	}
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(30px) rotate(-3deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06) translateY(-8px) rotate(1deg);
+  }
+  75% {
+    transform: scale(0.97) translateY(3px) rotate(-0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
 }
 
 .deep-card.special-entrance {
-	animation: specialEntrance 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards !important;
+  animation: specialEntrance 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards !important;
 }
