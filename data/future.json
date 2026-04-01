@@ -1,129 +1,171 @@
 {
-	"id": "future",
-	"name_vi": "Tương lai",
-	"name_en": "Our Future",
-	"color": "#7ED6DF",
-	"icon": "🌹",
-	"questions": [
-		{
-			"id": 1,
-			"tag": "light",
-			"text_vi": "Buổi sáng thứ Bảy lý tưởng cùng người yêu sẽ diễn ra như thế nào? Hãy mô tả chi tiết.",
-			"text_en": "What does your ideal Saturday morning with your partner look like? Describe in detail."
-		},
-		{
-			"id": 2,
-			"tag": "light",
-			"text_vi": "Nếu được chọn sống ở bất cứ đâu trên thế giới cùng người yêu, bạn chọn đâu và vì sao?",
-			"text_en": "If you could live anywhere in the world with your partner, where would you choose and why?"
-		},
-		{
-			"id": 3,
-			"tag": "light",
-			"text_vi": "Nếu hai người cùng viết một cuốn sách về tình yêu, chương đầu tiên sẽ là gì?",
-			"text_en": "If you both wrote a book about your love, what would the first chapter be?"
-		},
-		{
-			"id": 4,
-			"tag": "light",
-			"text_vi": "Nếu tình yêu là một cuộc phiêu lưu, bạn đang ở chương nào rồi? Hãy kể về hành trình.",
-			"text_en": "If love were an adventure, what chapter are you on? Tell me about the journey."
-		},
-		{
-			"id": 5,
-			"tag": "light",
-			"text_vi": "Điều gì khiến bạn hào hứng nhất khi nghĩ về tương lai cùng ai đó?",
-			"text_en": "What excites you most when thinking about a future with someone?"
-		},
-		{
-			"id": 6,
-			"tag": "medium",
-			"text_vi": "Nơi nào bạn muốn cùng người yêu xây dựng tổ ấm? Tổ ấm đó trông như thế nào?",
-			"text_en": "Where would you like to build a home with your partner? What would it look like?"
-		},
-		{
-			"id": 7,
-			"tag": "medium",
-			"text_vi": "Khi người yêu muốn theo đuổi ước mơ ở xa, bạn sẽ hỗ trợ như thế nào?",
-			"text_en": "When your partner wants to pursue a dream far away, how would you support them?"
-		},
-		{
-			"id": 8,
-			"tag": "medium",
-			"text_vi": "Điều bạn mong muốn nhất ở tương lai của hai người là gì? Hãy chia sẻ chi tiết.",
-			"text_en": "What do you hope for most in your future together? Share in detail."
-		},
-		{
-			"id": 9,
-			"tag": "medium",
-			"text_vi": "Bí mật để hạnh phúc lâu dài trong tình yêu là gì theo bạn?",
-			"text_en": "What is the secret to lasting happiness in love according to you?"
-		},
-		{
-			"id": 10,
-			"tag": "medium",
-			"text_vi": "Trong 3 năm tới, mục tiêu ưu tiên số 1 của bạn là sự nghiệp, trải nghiệm sống, hay xây dựng gia đình? Hai ta có đang cùng nhịp độ không?",
-			"text_en": "In the next 3 years, is your top priority career, life experiences, or building a family? Are we on the same pace?"
-		},
-		{
-			"id": 11,
-			"tag": "medium",
-			"text_vi": "10 năm nữa, bạn muốn kể cho người yêu câu chuyện gì về khoảnh khắc hiện tại?",
-			"text_en": "In 10 years, what story do you want to tell your partner about this moment?"
-		},
-		{
-			"id": 12,
-			"tag": "medium",
-			"text_vi": "Nếu chỉ có một điều ước cho tình yêu của mình, bạn sẽ ước gì và vì sao?",
-			"text_en": "If you had just one wish for your love, what would it be and why?"
-		},
-		{
-			"id": 13,
-			"tag": "medium",
-			"text_vi": "Ngày cuối cùng trên thế giới này, bạn muốn làm gì cùng người yêu?",
-			"text_en": "On the last day on earth, what would you want to do with your partner?"
-		},
-		{
-			"id": 14,
-			"tag": "deep",
-			"text_vi": "Lời hứa nào bạn muốn giữ trọn đời với người mình yêu?",
-			"text_en": "What promise do you want to keep for a lifetime with the person you love?"
-		},
-		{
-			"id": 15,
-			"tag": "deep",
-			"text_vi": "Khi sự nghiệp và tình yêu xung đột, bạn sẽ cân bằng như thế nào?",
-			"text_en": "When career and love conflict, how would you find balance?"
-		},
-		{
-			"id": 16,
-			"tag": "sensitive",
-			"text_vi": "Bạn hình dung cuộc sống hôn nhân lý tưởng của mình sẽ như thế nào? Hãy vẽ ra bức tranh đó.",
-			"text_en": "How do you envision your ideal married life? Paint that picture."
-		},
-		{
-			"id": 17,
-			"tag": "sensitive",
-			"text_vi": "Nếu có con, bạn sẽ là ông bố/bà mẹ như thế nào? Hãy mô tả.",
-			"text_en": "If you have children, what kind of parent would you be? Describe it."
-		},
-		{
-			"id": 18,
-			"tag": "sensitive",
-			"text_vi": "Điều quan trọng nhất bạn muốn dạy con mình về tình yêu là gì?",
-			"text_en": "What is the most important thing you'd teach your children about love?"
-		},
-		{
-			"id": 19,
-			"tag": "sensitive",
-			"text_vi": "Tài chính trong hôn nhân nên được quản lý như thế nào theo bạn? Hãy chia sẻ quan điểm.",
-			"text_en": "How should finances in marriage be managed according to you? Share your view."
-		},
-		{
-			"id": 20,
-			"tag": "sensitive",
-			"text_vi": "Khoảnh khắc cầu hôn lý tưởng trong mơ của bạn sẽ diễn ra như thế nào?",
-			"text_en": "What would your dream proposal moment look like?"
-		}
-	]
+  "id": "future",
+  "name_vi": "Tương lai",
+  "name_en": "Our Future",
+  "name_zh": "未来",
+  "name_ja": "未来",
+  "color": "#7ED6DF",
+  "icon": "🌹",
+  "questions": [
+    {
+      "id": 1,
+      "tag": "light",
+      "text_vi": "Buổi sáng thứ Bảy lý tưởng cùng người yêu sẽ diễn ra như thế nào? Hãy mô tả chi tiết.",
+      "text_en": "What does your ideal Saturday morning with your partner look like? Describe in detail.",
+      "text_zh": "和伴侣度过的理想周六早晨是什么样的？请详细描述。",
+      "text_ja": "パートナーとの理想の土曜の朝はどんな感じですか？詳しく教えてください。"
+    },
+    {
+      "id": 2,
+      "tag": "light",
+      "text_vi": "Nếu được chọn sống ở bất cứ đâu trên thế giới cùng người yêu, bạn chọn đâu và vì sao?",
+      "text_en": "If you could live anywhere in the world with your partner, where would you choose and why?",
+      "text_zh": "如果可以选择和伴侣住在世界上的任何地方，你会选择哪里？为什么？",
+      "text_ja": "もしパートナーと世界中のどこにでも住めるとしたら、どこを選びますか？それはなぜですか？"
+    },
+    {
+      "id": 3,
+      "tag": "light",
+      "text_vi": "Nếu hai người cùng viết một cuốn sách về tình yêu, chương đầu tiên sẽ là gì?",
+      "text_en": "If you both wrote a book about your love, what would the first chapter be?",
+      "text_zh": "如果你们两人共同写一本关于你们爱情的书，第一章会是什么？",
+      "text_ja": "もし二人の愛についての本を共著するとしたら、第一章はどんな内容になりますか？"
+    },
+    {
+      "id": 4,
+      "tag": "light",
+      "text_vi": "Nếu tình yêu là một cuộc phiêu lưu, bạn đang ở chương nào rồi? Hãy kể về hành trình.",
+      "text_en": "If love were an adventure, what chapter are you on? Tell me about the journey.",
+      "text_zh": "如果爱情是一场冒险，你现在在第几章？跟我讲讲这段旅程。",
+      "text_ja": "恋愛が冒険だとしたら、あなたは今どの章にいますか？その旅について教えてください。"
+    },
+    {
+      "id": 5,
+      "tag": "light",
+      "text_vi": "Điều gì khiến bạn hào hứng nhất khi nghĩ về tương lai cùng ai đó?",
+      "text_en": "What excites you most when thinking about a future with someone?",
+      "text_zh": "想到和某人的未来，什么最让你兴奋？",
+      "text_ja": "誰かとの未来を考えるとき、一番ワクワクすることは何ですか？"
+    },
+    {
+      "id": 6,
+      "tag": "medium",
+      "text_vi": "Nơi nào bạn muốn cùng người yêu xây dựng tổ ấm? Tổ ấm đó trông như thế nào?",
+      "text_en": "Where would you like to build a home with your partner? What would it look like?",
+      "text_zh": "你想和伴侣在哪里共筑爱巢？那个家会是什么样子？",
+      "text_ja": "パートナーとどこに家を建てたいですか？それはどんな家ですか？"
+    },
+    {
+      "id": 7,
+      "tag": "medium",
+      "text_vi": "Khi người yêu muốn theo đuổi ước mơ ở xa, bạn sẽ hỗ trợ như thế nào?",
+      "text_en": "When your partner wants to pursue a dream far away, how would you support them?",
+      "text_zh": "当伴侣想去远方追梦时，你会如何支持？",
+      "text_ja": "パートナーが遠くで夢を追いかけたいとき、どのようにサポートしますか？"
+    },
+    {
+      "id": 8,
+      "tag": "medium",
+      "text_vi": "Điều bạn mong muốn nhất ở tương lai của hai người là gì? Hãy chia sẻ chi tiết.",
+      "text_en": "What do you hope for most in your future together? Share in detail.",
+      "text_zh": "你对两个人共同的未来最大的期望是什么？请详细分享。",
+      "text_ja": "二人の未来に最も望むことは何ですか？詳しく教えてください。"
+    },
+    {
+      "id": 9,
+      "tag": "medium",
+      "text_vi": "Bí mật để hạnh phúc lâu dài trong tình yêu là gì theo bạn?",
+      "text_en": "What is the secret to lasting happiness in love according to you?",
+      "text_zh": "你认为爱情中长久幸福的秘诀是什么？",
+      "text_ja": "あなたにとって、恋愛において長く幸せでいる秘訣は何ですか？"
+    },
+    {
+      "id": 10,
+      "tag": "medium",
+      "text_vi": "Trong 3 năm tới, mục tiêu ưu tiên số 1 của bạn là sự nghiệp, trải nghiệm sống, hay xây dựng gia đình? Hai ta có đang cùng nhịp độ không?",
+      "text_en": "In the next 3 years, is your top priority career, life experiences, or building a family? Are we on the same pace?",
+      "text_zh": "在未来三年里，你的首要任务是事业、生活体验，还是组建家庭？我们的步调一致吗？",
+      "text_ja": "今後3年間で、あなたの最優先事項はキャリアですか、人生経験ですか、それとも家庭を築くことですか？私たちのペースは合っていますか？"
+    },
+    {
+      "id": 11,
+      "tag": "medium",
+      "text_vi": "10 năm nữa, bạn muốn kể cho người yêu câu chuyện gì về khoảnh khắc hiện tại?",
+      "text_en": "In 10 years, what story do you want to tell your partner about this moment?",
+      "text_zh": "10年后，关于此时此刻，你想给伴侣讲一个什么故事？",
+      "text_ja": "10年後、今のこの瞬間について、パートナーにどんな話をしたいですか？"
+    },
+    {
+      "id": 12,
+      "tag": "medium",
+      "text_vi": "Nếu chỉ có một điều ước cho tình yêu của mình, bạn sẽ ước gì và vì sao?",
+      "text_en": "If you had just one wish for your love, what would it be and why?",
+      "text_zh": "如果对你们的爱情只能许一个愿，你会许什么？为什么？",
+      "text_ja": "二人の愛に対して一つだけ願いが叶うとしたら、何を願いますか？それはなぜですか？"
+    },
+    {
+      "id": 13,
+      "tag": "medium",
+      "text_vi": "Ngày cuối cùng trên thế giới này, bạn muốn làm gì cùng người yêu?",
+      "text_en": "On the last day on earth, what would you want to do with your partner?",
+      "text_zh": "在世界末日那一天，你想和伴侣做些什么？",
+      "text_ja": "地球最後の日に、パートナーと何をしたいですか？"
+    },
+    {
+      "id": 14,
+      "tag": "deep",
+      "text_vi": "Lời hứa nào bạn muốn giữ trọn đời với người mình yêu?",
+      "text_en": "What promise do you want to keep for a lifetime with the person you love?",
+      "text_zh": "你想对爱的人许下并遵守一生的承诺是什么？",
+      "text_ja": "愛する人と一生守り続けたい約束は何ですか？"
+    },
+    {
+      "id": 15,
+      "tag": "deep",
+      "text_vi": "Khi sự nghiệp và tình yêu xung đột, bạn sẽ cân bằng như thế nào?",
+      "text_en": "When career and love conflict, how would you find balance?",
+      "text_zh": "当事业和爱情发生冲突时，你会如何平衡？",
+      "text_ja": "仕事と恋愛が衝突したとき、どのようにバランスを取りますか？"
+    },
+    {
+      "id": 16,
+      "tag": "sensitive",
+      "text_vi": "Bạn hình dung cuộc sống hôn nhân lý tưởng của mình sẽ như thế nào? Hãy vẽ ra bức tranh đó.",
+      "text_en": "How do you envision your ideal married life? Paint that picture.",
+      "text_zh": "你理想中的婚姻生活是什么样的？描绘一下那幅画面。",
+      "text_ja": "あなたの理想の結婚生活はどのようなものですか？その情景を描いてみてください。"
+    },
+    {
+      "id": 17,
+      "tag": "sensitive",
+      "text_vi": "Nếu có con, bạn sẽ là ông bố/bà mẹ như thế nào? Hãy mô tả.",
+      "text_en": "If you have children, what kind of parent would you be? Describe it.",
+      "text_zh": "如果有了孩子，你会成为怎样的父母？请描述一下。",
+      "text_ja": "もし子供ができたら、どんな親になると思いますか？説明してください。"
+    },
+    {
+      "id": 18,
+      "tag": "sensitive",
+      "text_vi": "Điều quan trọng nhất bạn muốn dạy con mình về tình yêu là gì?",
+      "text_en": "What is the most important thing you'd teach your children about love?",
+      "text_zh": "关于爱，你最想教给孩子的最重要的事情是什么？",
+      "text_ja": "愛について、子供に教えたい最も重要なことは何ですか？"
+    },
+    {
+      "id": 19,
+      "tag": "sensitive",
+      "text_vi": "Tài chính trong hôn nhân nên được quản lý như thế nào theo bạn? Hãy chia sẻ quan điểm.",
+      "text_en": "How should finances in marriage be managed according to you? Share your view.",
+      "text_zh": "你认为婚姻中的财务应该如何管理？分享一下你的看法。",
+      "text_ja": "あなたの考えでは、結婚後の家計はどのように管理されるべきですか？あなたの意見を聞かせてください。"
+    },
+    {
+      "id": 20,
+      "tag": "sensitive",
+      "text_vi": "Khoảnh khắc cầu hôn lý tưởng trong mơ của bạn sẽ diễn ra như thế nào?",
+      "text_en": "What would your dream proposal moment look like?",
+      "text_zh": "你梦寐以求的求婚时刻是怎样的？",
+      "text_ja": "あなたが夢見る理想のプロポーズはどんな瞬間ですか？"
+    }
+  ]
 }

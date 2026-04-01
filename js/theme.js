@@ -15,11 +15,7 @@ DC.applyTheme = function applyTheme(theme) {
   } else {
     document.documentElement.removeAttribute('data-theme');
   }
-  const icon = theme === 'light' ? '☀️' : '🌙';
-  document.querySelectorAll('.theme-icon').forEach((el) => {
-    el.textContent = icon;
-  });
-  const metaColor = document.querySelector('meta[name="theme-color"]');
+  var metaColor = document.querySelector('meta[name="theme-color"]');
   if (metaColor) {
     metaColor.content = theme === 'light' ? '#faf5f0' : '#1a1a2e';
   }

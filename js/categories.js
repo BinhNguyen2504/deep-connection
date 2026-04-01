@@ -10,9 +10,9 @@ DC.renderCategories = function renderCategories() {
       (cat) =>
         `<div class="category-card" data-id="${cat.id}" style="--category-color:${cat.color}">` +
         `<div class="category-icon">${cat.icon}</div>` +
-        `<div class="category-name">${cat.name_vi}</div>` +
+        `<div class="category-name">${DC.localizedName(cat)}</div>` +
         `<div class="category-name-en">${cat.name_en}</div>` +
-        `<div class="category-count">${cat.questions.length} câu hỏi</div>` +
+        `<div class="category-count">${cat.questions.length} ${DC.t('questions')}</div>` +
         `</div>`,
     )
     .join('');
@@ -33,9 +33,12 @@ DC.startCategory = function startCategory(category) {
   DC.state.isFlipped = false;
   DC.state.swipeHintShown = false;
 
-  DC.refs.categoryLabel.textContent = `${category.icon} ${category.name_vi}`;
+  DC.refs.categoryLabel.textContent = `${category.icon} ${DC.localizedName(category)}`;
   DC.updateCounter();
 
-  DC.switchScreen(DC.refs.screenPlay);
+  DC.switchScreen(DC.refs.screenPlay, {
+    exit: 'screen-exit-left',
+    enter: 'screen-enter-right',
+  });
   DC.renderCards();
 };

@@ -1,129 +1,171 @@
 {
-	"id": "understanding",
-	"name_vi": "Thấu hiểu",
-	"name_en": "Understanding",
-	"color": "#C084FC",
-	"icon": "💞",
-	"questions": [
-		{
-			"id": 1,
-			"tag": "light",
-			"text_vi": "Ngôn ngữ tình yêu của bạn là gì — lời nói, hành động, quà tặng, thời gian, hay cử chỉ? Hãy giải thích vì sao.",
-			"text_en": "What is your love language — words, actions, gifts, quality time, or physical touch? Explain why."
-		},
-		{
-			"id": 2,
-			"tag": "light",
-			"text_vi": "Bạn thể hiện tình yêu theo những cách nào? Hãy kể về những cách riêng của bạn.",
-			"text_en": "In what ways do you express love? Tell me about your unique ways."
-		},
-		{
-			"id": 3,
-			"tag": "medium",
-			"text_vi": "Khi nào bạn cảm thấy được thấu hiểu nhất? Ai đó cần làm gì để bạn cảm thấy được 'nhìn thấy'?",
-			"text_en": "When do you feel most understood? What does someone need to do for you to feel truly 'seen'?"
-		},
-		{
-			"id": 4,
-			"tag": "medium",
-			"text_vi": "Khi người yêu cần không gian riêng, bạn phản ứng như thế nào? Hãy mô tả cảm xúc và hành động của bạn.",
-			"text_en": "When your partner needs personal space, how do you respond? Describe your feelings and actions."
-		},
-		{
-			"id": 5,
-			"tag": "medium",
-			"text_vi": "Khi người yêu buồn mà không muốn nói, bạn sẽ làm gì để hỗ trợ họ?",
-			"text_en": "When your partner is sad but doesn't want to talk, what do you do to support them?"
-		},
-		{
-			"id": 6,
-			"tag": "medium",
-			"text_vi": "Sự im lặng trong tình yêu có ý nghĩa gì với bạn? Khi nào im lặng là tốt, khi nào cần nói?",
-			"text_en": "What does silence mean to you in love? When is silence good, when is it time to speak?"
-		},
-		{
-			"id": 7,
-			"tag": "deep",
-			"text_vi": "Điều gì ở bạn mà bạn mong người yêu sẽ hiểu mà không cần nói ra?",
-			"text_en": "What about you do you hope your partner understands without being told?"
-		},
-		{
-			"id": 8,
-			"tag": "deep",
-			"text_vi": "Ranh giới nào bạn cần người yêu tôn trọng? Hãy chia sẻ cụ thể.",
-			"text_en": "What boundaries do you need your partner to respect? Share specifics."
-		},
-		{
-			"id": 9,
-			"tag": "deep",
-			"text_vi": "Khi nào bạn cảm thấy cô đơn nhất trong một mối quan hệ? Điều gì gây ra cảm giác đó?",
-			"text_en": "When do you feel most lonely in a relationship? What causes that feeling?"
-		},
-		{
-			"id": 10,
-			"tag": "deep",
-			"text_vi": "Điều gì khiến bạn cảm thấy không được lắng nghe trong một mối quan hệ?",
-			"text_en": "What makes you feel unheard in a relationship?"
-		},
-		{
-			"id": 11,
-			"tag": "deep",
-			"text_vi": "Điều gì bạn ước mình được dạy về tình yêu từ khi còn nhỏ?",
-			"text_en": "What do you wish you had been taught about love when you were young?"
-		},
-		{
-			"id": 12,
-			"tag": "deep",
-			"text_vi": "Bạn cần gì từ người yêu để cảm thấy được hỗ trợ trong những lúc khó khăn?",
-			"text_en": "What do you need from your partner to feel supported during difficult times?"
-		},
-		{
-			"id": 13,
-			"tag": "sensitive",
-			"text_vi": "Ngoài tình yêu, bạn mong đợi điều gì nhất ở một người bạn đời?",
-			"text_en": "Beyond love, what do you expect most from a life partner?"
-		},
-		{
-			"id": 14,
-			"tag": "medium",
-			"text_vi": "Trong một năm qua bên nhau, bạn thấy bản thân mình đã thay đổi theo hướng tích cực nào?",
-			"text_en": "In the past year together, in what positive ways do you feel you've changed?"
-		},
-		{
-			"id": 15,
-			"tag": "medium",
-			"text_vi": "Có sở thích hay đam mê cá nhân nào bạn tạm gác lại từ khi chúng ta yêu nhau không?",
-			"text_en": "Are there any personal hobbies or passions you've put on hold since we started dating?"
-		},
-		{
-			"id": 16,
-			"tag": "deep",
-			"text_vi": "Áp lực lớn nhất của bạn trong công việc hiện tại là gì, và mình có thể làm gì để bạn đỡ mệt mỏi hơn khi về nhà?",
-			"text_en": "What is your biggest pressure at work right now, and what can I do to make you feel less tired when you get home?"
-		},
-		{
-			"id": 17,
-			"tag": "deep",
-			"text_vi": "Bạn nghĩ điểm mù (blind spot) trong tính cách của bản thân là gì mà đôi khi khiến mối quan hệ căng thẳng?",
-			"text_en": "What do you think is a blind spot in your personality that sometimes causes tension in our relationship?"
-		},
-		{
-			"id": 18,
-			"tag": "deep",
-			"text_vi": "Sự tự do cá nhân và sự gắn kết trong tình yêu – tỷ lệ hoàn hảo đối với bạn là bao nhiêu?",
-			"text_en": "Personal freedom vs. connection in love — what is the perfect ratio for you?"
-		},
-		{
-			"id": 19,
-			"tag": "sensitive",
-			"text_vi": "Có điều gì bạn luôn muốn tâm sự với mình nhưng lại sợ mình sẽ đánh giá hoặc không hiểu không?",
-			"text_en": "Is there something you've always wanted to confide in me but feared I would judge or misunderstand?"
-		},
-		{
-			"id": 20,
-			"tag": "sensitive",
-			"text_vi": "Sang chấn tâm lý (trauma) từ quá khứ hoặc những mối tình cũ có đang âm thầm ảnh hưởng đến cách bạn yêu mình hiện tại không?",
-			"text_en": "Is any past trauma or previous relationship secretly affecting how you love me right now?"
-		}
-	]
+  "id": "understanding",
+  "name_vi": "Thấu hiểu",
+  "name_en": "Understanding",
+  "name_zh": "理解",
+  "name_ja": "理解",
+  "color": "#C084FC",
+  "icon": "💞",
+  "questions": [
+    {
+      "id": 1,
+      "tag": "light",
+      "text_vi": "Ngôn ngữ tình yêu của bạn là gì — lời nói, hành động, quà tặng, thời gian, hay cử chỉ? Hãy giải thích vì sao.",
+      "text_en": "What is your love language — words, actions, gifts, quality time, or physical touch? Explain why.",
+      "text_zh": "你的“爱的语言”是什么——言语、行动、礼物、高质量时间，还是身体接触？请解释原因。",
+      "text_ja": "あなたの「愛の言語」は何ですか？言葉、行動、贈り物、一緒に過ごす時間、それともスキンシップですか？その理由も説明してください。"
+    },
+    {
+      "id": 2,
+      "tag": "light",
+      "text_vi": "Bạn thể hiện tình yêu theo những cách nào? Hãy kể về những cách riêng của bạn.",
+      "text_en": "In what ways do you express love? Tell me about your unique ways.",
+      "text_zh": "你通常用什么方式表达爱？请告诉我你独特的方式。",
+      "text_ja": "あなたはどのような方法で愛を表現しますか？あなた独自の方法について教えてください。"
+    },
+    {
+      "id": 3,
+      "tag": "medium",
+      "text_vi": "Khi nào bạn cảm thấy được thấu hiểu nhất? Ai đó cần làm gì để bạn cảm thấy được 'nhìn thấy'?",
+      "text_en": "When do you feel most understood? What does someone need to do for you to feel truly 'seen'?",
+      "text_zh": "你什么时候感觉最被理解？别人需要做什么才能让你觉得自己真正被“看见”了？",
+      "text_ja": "あなたが一番理解されていると感じるのはどんな時ですか？あなたが本当に「見てもらえている」と感じるには、誰かに何をしてもらう必要がありますか？"
+    },
+    {
+      "id": 4,
+      "tag": "medium",
+      "text_vi": "Khi người yêu cần không gian riêng, bạn phản ứng như thế nào? Hãy mô tả cảm xúc và hành động của bạn.",
+      "text_en": "When your partner needs personal space, how do you respond? Describe your feelings and actions.",
+      "text_zh": "当伴侣需要个人空间时，你会作何反应？请描述你的感受和行动。",
+      "text_ja": "パートナーが一人の時間を必要としている時、あなたはどのように対応しますか？その時の感情と行動を説明してください。"
+    },
+    {
+      "id": 5,
+      "tag": "medium",
+      "text_vi": "Khi người yêu buồn mà không muốn nói, bạn sẽ làm gì để hỗ trợ họ?",
+      "text_en": "When your partner is sad but doesn't want to talk, what do you do to support them?",
+      "text_zh": "当伴侣难过却不想说话时，你会做什么来支持他们？",
+      "text_ja": "パートナーが悲しんでいて話したくない時、あなたは彼らをサポートするために何をしますか？"
+    },
+    {
+      "id": 6,
+      "tag": "medium",
+      "text_vi": "Sự im lặng trong tình yêu có ý nghĩa gì với bạn? Khi nào im lặng là tốt, khi nào cần nói?",
+      "text_en": "What does silence mean to you in love? When is silence good, when is it time to speak?",
+      "text_zh": "在爱情中，沉默对你来说意味着什么？什么时候沉默是好的，什么时候该开口？",
+      "text_ja": "恋愛において「沈黙」はあなたにとってどんな意味がありますか？沈黙が良い時とはいつで、話すべき時とはいつですか？"
+    },
+    {
+      "id": 7,
+      "tag": "deep",
+      "text_vi": "Điều gì ở bạn mà bạn mong người yêu sẽ hiểu mà không cần nói ra?",
+      "text_en": "What about you do you hope your partner understands without being told?",
+      "text_zh": "关于你自己，你希望伴侣不用你说也能理解什么？",
+      "text_ja": "自分自身のことについて、言葉にしなくてもパートナーに理解してほしいことは何ですか？"
+    },
+    {
+      "id": 8,
+      "tag": "deep",
+      "text_vi": "Ranh giới nào bạn cần người yêu tôn trọng? Hãy chia sẻ cụ thể.",
+      "text_en": "What boundaries do you need your partner to respect? Share specifics.",
+      "text_zh": "你需要伴侣尊重哪些界限？请具体分享。",
+      "text_ja": "パートナーに尊重してほしい境界線（バウンダリー）は何ですか？具体的に教えてください。"
+    },
+    {
+      "id": 9,
+      "tag": "deep",
+      "text_vi": "Khi nào bạn cảm thấy cô đơn nhất trong một mối quan hệ? Điều gì gây ra cảm giác đó?",
+      "text_en": "When do you feel most lonely in a relationship? What causes that feeling?",
+      "text_zh": "在一段关系中，你什么时候感觉最孤独？是什么导致了这种感觉？",
+      "text_ja": "関係の中で最も孤独を感じるのはどんな時ですか？何がその感情を引き起こしますか？"
+    },
+    {
+      "id": 10,
+      "tag": "deep",
+      "text_vi": "Điều gì khiến bạn cảm thấy không được lắng nghe trong một mối quan hệ?",
+      "text_en": "What makes you feel unheard in a relationship?",
+      "text_zh": "在一段关系中，什么让你感觉不被倾听？",
+      "text_ja": "関係の中で、自分の話を聞いてもらえていないと感じるのはどんな時ですか？"
+    },
+    {
+      "id": 11,
+      "tag": "deep",
+      "text_vi": "Điều gì bạn ước mình được dạy về tình yêu từ khi còn nhỏ?",
+      "text_en": "What do you wish you had been taught about love when you were young?",
+      "text_zh": "你希望小时候能有人教给你关于爱情的什么道理？",
+      "text_ja": "子供の頃に、恋愛について教えてほしかったことは何ですか？"
+    },
+    {
+      "id": 12,
+      "tag": "deep",
+      "text_vi": "Bạn cần gì từ người yêu để cảm thấy được hỗ trợ trong những lúc khó khăn?",
+      "text_en": "What do you need from your partner to feel supported during difficult times?",
+      "text_zh": "在困难时期，你需要从伴侣那里得到什么才能感觉受到支持？",
+      "text_ja": "困難な時期にサポートされていると感じるために、パートナーから何を必要としますか？"
+    },
+    {
+      "id": 13,
+      "tag": "sensitive",
+      "text_vi": "Ngoài tình yêu, bạn mong đợi điều gì nhất ở một người bạn đời?",
+      "text_en": "Beyond love, what do you expect most from a life partner?",
+      "text_zh": "除了爱情，你对生活伴侣最大的期望是什么？",
+      "text_ja": "愛情以外で、人生のパートナーに最も期待することは何ですか？"
+    },
+    {
+      "id": 14,
+      "tag": "medium",
+      "text_vi": "Trong một năm qua bên nhau, bạn thấy bản thân mình đã thay đổi theo hướng tích cực nào?",
+      "text_en": "In the past year together, in what positive ways do you feel you've changed?",
+      "text_zh": "在过去的一年里，你觉得自己在哪些方面发生了积极的改变？",
+      "text_ja": "一緒に過ごした過去1年間で、自分自身がどんな良い方向に変わったと感じますか？"
+    },
+    {
+      "id": 15,
+      "tag": "medium",
+      "text_vi": "Có sở thích hay đam mê cá nhân nào bạn tạm gác lại từ khi chúng ta yêu nhau không?",
+      "text_en": "Are there any personal hobbies or passions you've put on hold since we started dating?",
+      "text_zh": "自从我们谈恋爱以来，你有什么个人爱好或激情被暂时搁置了吗？",
+      "text_ja": "付き合い始めてから、一時的に保留している個人の趣味や情熱はありますか？"
+    },
+    {
+      "id": 16,
+      "tag": "deep",
+      "text_vi": "Áp lực lớn nhất của bạn trong công việc hiện tại là gì, và mình có thể làm gì để bạn đỡ mệt mỏi hơn khi về nhà?",
+      "text_en": "What is your biggest pressure at work right now, and what can I do to make you feel less tired when you get home?",
+      "text_zh": "你目前工作中最大的压力是什么？我能做些什么让你回家后感觉不那么疲惫？",
+      "text_ja": "今の仕事で一番プレッシャーに感じていることは何ですか？あなたが家に帰った時、疲れを和らげるために私にできることは何ですか？"
+    },
+    {
+      "id": 17,
+      "tag": "deep",
+      "text_vi": "Bạn nghĩ điểm mù (blind spot) trong tính cách của bản thân là gì mà đôi khi khiến mối quan hệ căng thẳng?",
+      "text_en": "What do you think is a blind spot in your personality that sometimes causes tension in our relationship?",
+      "text_zh": "你觉得你性格中的盲点是什么，以至于有时会让我们关系紧张？",
+      "text_ja": "時々私たちの関係に緊張をもたらす、あなたの性格の「死角（ブラインドスポット）」は何だと思いますか？"
+    },
+    {
+      "id": 18,
+      "tag": "deep",
+      "text_vi": "Sự tự do cá nhân và sự gắn kết trong tình yêu – tỷ lệ hoàn hảo đối với bạn là bao nhiêu?",
+      "text_en": "Personal freedom vs. connection in love — what is the perfect ratio for you?",
+      "text_zh": "个人自由与爱情中的紧密连结——对你来说完美的比例是多少？",
+      "text_ja": "個人の自由と恋愛における繋がり——あなたにとって完璧な割合はどのくらいですか？"
+    },
+    {
+      "id": 19,
+      "tag": "sensitive",
+      "text_vi": "Có điều gì bạn luôn muốn tâm sự với mình nhưng lại sợ mình sẽ đánh giá hoặc không hiểu không?",
+      "text_en": "Is there something you've always wanted to confide in me but feared I would judge or misunderstand?",
+      "text_zh": "有没有什么事情你一直想向我倾诉，但又怕我评判或误解你？",
+      "text_ja": "ずっと私に打ち明けたかったけれど、評価されたり誤解されたりするのが怖くて言えなかったことはありますか？"
+    },
+    {
+      "id": 20,
+      "tag": "sensitive",
+      "text_vi": "Sang chấn tâm lý (trauma) từ quá khứ hoặc những mối tình cũ có đang âm thầm ảnh hưởng đến cách bạn yêu mình hiện tại không?",
+      "text_en": "Is any past trauma or previous relationship secretly affecting how you love me right now?",
+      "text_zh": "过去的心理创伤或以前的恋情，是否在暗中影响着你现在爱我的方式？",
+      "text_ja": "過去のトラウマや以前の恋愛が、今の私への愛し方に密かに影響を与えていることはありますか？"
+    }
+  ]
 }

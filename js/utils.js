@@ -29,7 +29,40 @@ function getAudioCtx() {
   return _audioCtx;
 }
 
+// ────────────── SOUND TOGGLE ──────────────
+DC.initSound = function initSound() {
+  var saved = localStorage.getItem('dc-sound');
+  DC.state.soundEnabled = saved !== 'off';
+  DC.applySoundState();
+};
+
+DC.applySoundState = function applySoundState() {
+  var icon = DC.state.soundEnabled ? '🔊' : '🔇';
+  document.querySelectorAll('.sound-icon').forEach(function (el) {
+    el.textContent = icon;
+  });
+};
+
+DC.toggleSound = function toggleSound() {
+  DC.state.soundEnabled = !DC.state.soundEnabled;
+  localStorage.setItem('dc-sound', DC.state.soundEnabled ? 'on' : 'off');
+  document.querySelectorAll('.sound-toggle').forEach(function (btn) {
+    btn.classList.remove('toggling');
+    void btn.offsetWidth;
+    btn.classList.add('toggling');
+    btn.addEventListener(
+      'animationend',
+      function () {
+        btn.classList.remove('toggling');
+      },
+      { once: true },
+    );
+  });
+  DC.applySoundState();
+};
+
 DC.playSound = function playSound(type) {
+  if (!DC.state.soundEnabled) return;
   try {
     const ctx = getAudioCtx();
     const now = ctx.currentTime;

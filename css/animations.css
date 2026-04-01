@@ -124,3 +124,183 @@
 .deep-card.special-entrance {
   animation: specialEntrance 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards !important;
 }
+
+/* Sound toggle pulse animation on click */
+@keyframes soundTogglePulse {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.85);
+  }
+  60% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sound-toggle.toggling {
+  animation: soundTogglePulse 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sound-toggle.toggling .sound-icon {
+  animation: soundIconSwap 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes soundIconSwap {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-90deg);
+  }
+  60% {
+    opacity: 0;
+    transform: scale(0.3) rotate(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* ==========================================
+   SCREEN TRANSITIONS
+   ========================================== */
+
+/* Override base transition during animated screen switches */
+.screen.screen-exit-left,
+.screen.screen-exit-right,
+.screen.screen-exit-scale-down,
+.screen.screen-exit-down {
+  transition: none;
+  z-index: 9 !important;
+}
+
+.screen.screen-enter-right,
+.screen.screen-enter-left,
+.screen.screen-enter-up,
+.screen.screen-enter-scale-up {
+  transition: none;
+  z-index: 11 !important;
+}
+
+/* --- Horizontal slide (Home ↔ Play) --- */
+@keyframes screenExitLeft {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-20%) scale(0.92);
+    opacity: 0;
+  }
+}
+
+@keyframes screenEnterRight {
+  0% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes screenExitRight {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20%) scale(0.92);
+    opacity: 0;
+  }
+}
+
+@keyframes screenEnterLeft {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.screen.screen-exit-left {
+  animation: screenExitLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.screen.screen-enter-right {
+  animation: screenEnterRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.screen.screen-exit-right {
+  animation: screenExitRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.screen.screen-enter-left {
+  animation: screenEnterLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* --- Vertical slide + scale (Home ↔ Info) --- */
+@keyframes screenExitScaleDown {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+}
+
+@keyframes screenEnterUp {
+  0% {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes screenExitDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+}
+
+@keyframes screenEnterScaleUp {
+  0% {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.screen.screen-exit-scale-down {
+  animation: screenExitScaleDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.screen.screen-enter-up {
+  animation: screenEnterUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.screen.screen-exit-down {
+  animation: screenExitDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.screen.screen-enter-scale-up {
+  animation: screenEnterScaleUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}

@@ -59,10 +59,10 @@ DC.createCardElement = function createCardElement(question, stackIndex) {
       ? 'rgba(233,69,96,0.45)'
       : cat.color + (tagBorderAlpha[question.tag] || '33');
   const TAG_LABELS = {
-    light: 'nhẹ nhàng',
-    medium: 'thú vị',
-    deep: 'sâu sắc',
-    sensitive: 'nhạy cảm',
+    light: DC.t('tagLight'),
+    medium: DC.t('tagMedium'),
+    deep: DC.t('tagDeep'),
+    sensitive: DC.t('tagSensitive'),
   };
   const tagLabel = TAG_LABELS[question.tag] || '';
 
@@ -96,8 +96,8 @@ DC.createCardElement = function createCardElement(question, stackIndex) {
     `<div class="card-front-inner">` +
     `<div class="card-front-icon">${cat.icon}</div>` +
     `<div class="card-front-title">Deep Connection</div>` +
-    `<div class="card-front-subtitle">${cat.name_vi}</div>` +
-    `<div class="card-front-hint">Chạm để lật</div>` +
+    `<div class="card-front-subtitle">${DC.localizedName(cat)}</div>` +
+    `<div class="card-front-hint">${DC.t('tapToFlip')}</div>` +
     `</div>` +
     `</div>` +
     `<div class="card-face card-back" style="border-color: ${backBorderColor};">` +
@@ -109,11 +109,14 @@ DC.createCardElement = function createCardElement(question, stackIndex) {
     `<span class="card-edge-ornament back-edge top">∞</span>` +
     `<span class="card-edge-ornament back-edge bottom">∞</span>` +
     `<span class="card-tag-badge tag-${question.tag || 'light'}">${tagLabel}</span>` +
+    `<div class="card-question-group">` +
     `<div class="card-question-wrap">` +
-    `<p class="card-question-vi">${question.text_vi}</p>` +
+    `<p class="card-question-vi">${DC.localizedText(question)}</p>` +
     `</div>` +
     `<div class="card-divider" style="background:${cat.color};"></div>` +
-    `<p class="card-question-en">${question.text_en}</p>${feedbackHtml}<span class="card-back-category">${cat.name_en}</span>` +
+    `<p class="card-question-en">${question.text_en}</p>` +
+    `</div>` +
+    `${feedbackHtml}<span class="card-back-category">${cat.name_en}</span>` +
     `</div>`;
 
   if (stackIndex === 0) {

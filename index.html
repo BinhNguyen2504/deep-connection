@@ -20,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/variables.css" />
@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/play.css" />
     <link rel="stylesheet" href="css/info.css" />
     <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/settings.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/animations.css" />
     <link rel="stylesheet" href="css/responsive.css" />
@@ -38,13 +39,25 @@
     <!-- ============ SCREEN 0: COVER / LANDING ============ -->
     <div id="screen-cover" class="screen active">
       <div class="cover-container">
-        <button
-          id="cover-theme-toggle"
-          class="theme-toggle cover-theme-toggle"
-          aria-label="Đổi giao diện"
-        >
-          <span class="theme-icon">🌙</span>
-        </button>
+        <div class="cover-toggles">
+          <button class="settings-toggle" aria-label="Cài đặt">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+              ></path>
+            </svg>
+          </button>
+        </div>
         <div class="cover-hearts">
           <span
             class="floating-heart"
@@ -96,11 +109,17 @@
             </div>
           </div>
           <h1 class="cover-title">Deep Connection</h1>
-          <p class="cover-subtitle">Khám phá tình yêu qua từng lá bài</p>
-          <div class="cover-start-hint">Chạm để bắt đầu</div>
+          <p id="cover-subtitle" class="cover-subtitle">
+            Khám phá tình yêu qua từng lá bài
+          </p>
+          <div id="cover-start-hint" class="cover-start-hint">
+            Chạm để bắt đầu
+          </div>
         </div>
         <div class="cover-footer">
-          <p>Một bộ bài cho những trái tim muốn kết nối sâu hơn</p>
+          <p id="cover-footer-text">
+            Một bộ bài cho những trái tim muốn kết nối sâu hơn
+          </p>
         </div>
       </div>
     </div>
@@ -129,12 +148,22 @@
               <line x1="12" y1="8" x2="12.01" y2="8"></line>
             </svg>
           </button>
-          <button
-            id="home-theme-toggle"
-            class="theme-toggle home-theme-toggle"
-            aria-label="Đổi giao diện"
-          >
-            <span class="theme-icon">🌙</span>
+          <button class="settings-toggle" aria-label="Cài đặt">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="3"></circle>
+              <path
+                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+              ></path>
+            </svg>
           </button>
         </div>
         <header class="home-header">
@@ -197,12 +226,22 @@
                 <line x1="4" y1="4" x2="9" y2="9"></line>
               </svg>
             </button>
-            <button
-              id="play-theme-toggle"
-              class="theme-toggle"
-              aria-label="Đổi giao diện"
-            >
-              <span class="theme-icon">🌙</span>
+            <button class="settings-toggle" aria-label="Cài đặt">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
             </button>
           </div>
         </div>
@@ -215,7 +254,9 @@
 
           <!-- Swipe hint overlay -->
           <div id="swipe-hint" class="swipe-hint">
-            <span class="swipe-hint-text">← Vuốt để đổi câu hỏi →</span>
+            <span id="swipe-hint-text" class="swipe-hint-text"
+              >← Vuốt để đổi câu hỏi →</span
+            >
           </div>
         </div>
 
@@ -240,9 +281,11 @@
               <polyline points="9 14 4 9 9 4"></polyline>
               <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
             </svg>
-            <span>Trước</span>
+            <span id="btn-prev-label">Trước</span>
           </button>
-          <p class="tap-hint">Chạm vào thẻ để lật · Vuốt sang để đổi câu</p>
+          <p id="tap-hint" class="tap-hint">
+            Chạm vào thẻ để lật · Vuốt sang để đổi câu
+          </p>
         </div>
       </div>
     </div>
@@ -265,14 +308,28 @@
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
-          <span class="info-header-title">Giới thiệu</span>
-          <button
-            id="info-theme-toggle"
-            class="theme-toggle"
-            aria-label="Đổi giao diện"
+          <span id="info-header-title" class="info-header-title"
+            >Giới thiệu</span
           >
-            <span class="theme-icon">🌙</span>
-          </button>
+          <div class="info-header-right">
+            <button class="settings-toggle" aria-label="Cài đặt">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
 
         <div class="info-content">
@@ -280,13 +337,17 @@
           <div class="info-hero">
             <div class="info-logo" id="info-logo">💕</div>
             <h1 class="info-app-name">Deep Connection</h1>
-            <p class="info-tagline">Khám phá tình yêu qua từng lá bài</p>
+            <p id="info-tagline" class="info-tagline">
+              Khám phá tình yêu qua từng lá bài
+            </p>
           </div>
 
           <!-- About -->
           <div class="info-section">
-            <h2 class="info-section-title">Về ứng dụng</h2>
-            <p class="info-text">
+            <h2 id="info-about-title" class="info-section-title">
+              Về ứng dụng
+            </h2>
+            <p id="info-about-text" class="info-text">
               Deep Connection là bộ bài hội thoại dành cho các cặp đôi — từ
               những cuộc trò chuyện đầu tiên đến những chủ đề sâu sắc hơn. Mỗi
               lá bài là một câu hỏi giúp hai người hiểu nhau hơn, vượt qua những
@@ -301,31 +362,51 @@
 
           <!-- How to use -->
           <div class="info-section">
-            <h2 class="info-section-title">Cách chơi</h2>
+            <h2 id="info-how-title" class="info-section-title">Cách chơi</h2>
             <div class="info-steps">
               <div class="info-step">
                 <span class="info-step-num">1</span>
-                <span>Chọn một chủ đề phù hợp với giai đoạn của hai bạn</span>
+                <span id="info-step-1"
+                  >Chọn một chủ đề phù hợp với giai đoạn của hai bạn</span
+                >
               </div>
               <div class="info-step">
                 <span class="info-step-num">2</span>
-                <span>Chạm vào thẻ để lật và đọc câu hỏi</span>
+                <span id="info-step-2">Chạm vào thẻ để lật và đọc câu hỏi</span>
               </div>
               <div class="info-step">
                 <span class="info-step-num">3</span>
-                <span>Cả hai cùng trả lời — không có đáp án đúng hay sai</span>
+                <span id="info-step-3"
+                  >Cả hai cùng trả lời — không có đáp án đúng hay sai</span
+                >
               </div>
               <div class="info-step">
                 <span class="info-step-num">4</span>
-                <span>Vuốt sang để chuyển câu hỏi tiếp theo</span>
+                <span id="info-step-4"
+                  >Vuốt sang để chuyển câu hỏi tiếp theo</span
+                >
               </div>
             </div>
           </div>
 
+          <!-- Contribute -->
+          <div class="info-section info-contribute">
+            <h2 id="info-contribute-title" class="info-section-title">
+              Đóng góp câu hỏi
+            </h2>
+            <p id="info-contribute-text" class="info-text">
+              Bạn có câu hỏi hay muốn chia sẻ? Hãy đóng góp để giúp các cặp đôi
+              khác có thêm nhiều cuộc trò chuyện ý nghĩa.
+            </p>
+            <button id="btn-contribute" class="btn btn-contribute-cta">
+              ✍️ Gửi câu hỏi của bạn
+            </button>
+          </div>
+
           <!-- Author -->
           <div class="info-section">
-            <h2 class="info-section-title">Tác giả</h2>
-            <p class="info-text">
+            <h2 id="info-author-title" class="info-section-title">Tác giả</h2>
+            <p id="info-author-text" class="info-text">
               Thiết kế & phát triển bởi <strong>Bình Nguyễn</strong>
             </p>
           </div>
@@ -381,15 +462,261 @@
       </div>
     </div>
 
+    <!-- ============ MODAL: CONTRIBUTE QUESTION ============ -->
+    <div id="modal-contribute" class="modal-overlay">
+      <div class="modal-content modal-contribute">
+        <div class="modal-icon">✍️</div>
+        <h2 id="contribute-modal-title">Đóng góp câu hỏi</h2>
+        <p id="contribute-modal-desc">
+          Chia sẻ câu hỏi của bạn để giúp các cặp đôi khác
+        </p>
+        <form id="contribute-form" class="contribute-form" autocomplete="off">
+          <div class="form-group">
+            <label id="contribute-category-label" for="contribute-category"
+              >Chủ đề</label
+            >
+            <select id="contribute-category">
+              <option value="">— Chọn chủ đề —</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label id="contribute-vi-label" for="contribute-vi"
+              >Câu hỏi tiếng Việt <span class="required">*</span></label
+            >
+            <textarea
+              id="contribute-vi"
+              rows="3"
+              placeholder="Nhập câu hỏi bằng tiếng Việt..."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label id="contribute-en-label" for="contribute-en"
+              >Câu hỏi tiếng Anh <span class="optional">(tùy chọn)</span></label
+            >
+            <textarea
+              id="contribute-en"
+              rows="3"
+              placeholder="Enter the question in English..."
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label id="contribute-name-label" for="contribute-name"
+              >Tên của bạn <span class="optional">(tùy chọn)</span></label
+            >
+            <input
+              type="text"
+              id="contribute-name"
+              placeholder="Ẩn danh"
+              maxlength="50"
+            />
+          </div>
+          <div id="contribute-status" class="contribute-status"></div>
+          <div class="modal-actions">
+            <button
+              type="submit"
+              id="btn-contribute-submit"
+              class="btn btn-primary"
+            >
+              Gửi câu hỏi
+            </button>
+            <button
+              type="button"
+              id="btn-contribute-cancel"
+              class="btn btn-secondary"
+            >
+              Hủy
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
     <!-- ============ MODAL: ALL CARDS USED ============ -->
     <div id="modal-reset" class="modal-overlay">
       <div class="modal-content">
         <div class="modal-icon">🎉</div>
-        <h2>Hết bài rồi!</h2>
-        <p>Bạn đã đi qua tất cả câu hỏi trong chủ đề này.</p>
+        <h2 id="modal-reset-title">Hết bài rồi!</h2>
+        <p id="modal-reset-text">
+          Bạn đã đi qua tất cả câu hỏi trong chủ đề này.
+        </p>
         <div class="modal-actions">
           <button id="btn-reset" class="btn btn-primary">Chơi lại</button>
           <button id="btn-home" class="btn btn-secondary">Đổi chủ đề</button>
+          <button id="btn-contribute-modal" class="btn btn-tertiary">
+            ✍️ Đóng góp câu hỏi
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SETTINGS BOTTOM SHEET ============ -->
+    <div id="settings-overlay" class="settings-overlay"></div>
+    <div id="settings-sheet" class="settings-sheet">
+      <div class="settings-handle">
+        <div class="settings-handle-bar"></div>
+      </div>
+      <div class="settings-header">
+        <span id="settings-title" class="settings-title">Cài đặt</span>
+        <button id="settings-close" class="settings-close" aria-label="Đóng">
+          ✕
+        </button>
+      </div>
+      <div class="settings-body">
+        <!-- Theme -->
+        <div class="settings-row">
+          <div class="settings-row-left">
+            <span id="settings-theme-label" class="settings-row-label"
+              >Giao diện</span
+            >
+            <span id="settings-theme-sublabel" class="settings-row-sublabel"
+              >Sáng / Tối</span
+            >
+          </div>
+          <button
+            id="settings-theme-toggle"
+            class="settings-icon-btn settings-theme-animated"
+            aria-label="Đổi giao diện"
+          >
+            <span class="settings-theme-icon-wrap">
+              <span class="theme-icon-sun">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="5" fill="currentColor" />
+                  <g
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  >
+                    <line x1="12" y1="1" x2="12" y2="3" />
+                    <line x1="12" y1="21" x2="12" y2="23" />
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                    <line x1="1" y1="12" x2="3" y2="12" />
+                    <line x1="21" y1="12" x2="23" y2="12" />
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                  </g>
+                </svg>
+              </span>
+              <span class="theme-icon-moon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+        <!-- Sound -->
+        <div class="settings-row">
+          <div class="settings-row-left">
+            <span id="settings-sound-label" class="settings-row-label"
+              >Âm thanh</span
+            >
+            <span id="settings-sound-sublabel" class="settings-row-sublabel"
+              >Hiệu ứng âm thanh</span
+            >
+          </div>
+          <button
+            id="settings-sound-toggle"
+            class="settings-icon-btn settings-sound-animated"
+            aria-label="Tắt/bật âm thanh"
+          >
+            <span class="settings-sound-icon-wrap">
+              <span class="sound-icon-on">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <path
+                    d="M15.54 8.46a5 5 0 0 1 0 7.07"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M19.07 4.93a10 10 0 0 1 0 14.14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+              <span class="sound-icon-off">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                  <line
+                    x1="23"
+                    y1="9"
+                    x2="17"
+                    y2="15"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <line
+                    x1="17"
+                    y1="9"
+                    x2="23"
+                    y2="15"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
+        </div>
+        <!-- Language -->
+        <div class="settings-row">
+          <div class="settings-row-left">
+            <span id="settings-lang-label" class="settings-row-label"
+              >Ngôn ngữ</span
+            >
+            <span id="settings-lang-sublabel" class="settings-row-sublabel"
+              >Chạm để đổi ngôn ngữ</span
+            >
+          </div>
+          <button id="settings-lang-btn" class="settings-lang-btn">
+            <span id="settings-lang-flag" class="settings-lang-flag">🇻🇳</span>
+            <span id="settings-lang-label-text" class="settings-lang-label"
+              >Việt</span
+            >
+          </button>
+        </div>
+        <!-- Font Size -->
+        <div class="settings-row">
+          <div class="settings-row-left">
+            <span id="settings-fontsize-label" class="settings-row-label"
+              >Cỡ chữ</span
+            >
+            <span id="settings-fontsize-sublabel" class="settings-row-sublabel"
+              >Kích thước chữ trên lá bài</span
+            >
+          </div>
+          <div id="settings-fontsize-group" class="settings-font-size-group">
+            <button class="settings-font-size-btn" data-size="small">
+              Nhỏ
+            </button>
+            <button class="settings-font-size-btn active" data-size="medium">
+              Vừa
+            </button>
+            <button class="settings-font-size-btn" data-size="large">
+              Lớn
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -397,11 +724,14 @@
     <script src="js/state.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/language.js"></script>
     <script src="js/feedback.js"></script>
     <script src="js/categories.js"></script>
     <script src="js/cards.js"></script>
     <script src="js/interactions.js"></script>
     <script src="js/screens.js"></script>
+    <script src="js/contribute.js"></script>
+    <script src="js/settings.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

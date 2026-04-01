@@ -13,7 +13,7 @@ DC.bindCardEvents = function bindCardEvents(card) {
   let wasFlipped = false;
 
   const onStart = function onStart(e) {
-    if (DC.state.isSwiping) return;
+    if (DC.state.isSwiping || DC.state.isFlipping) return;
     if (e.touches) lastTouchTime = Date.now();
     if (!e.touches && Date.now() - lastTouchTime < 500) return;
 

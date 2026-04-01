@@ -458,8 +458,9 @@
     0 20px 60px -15px rgba(0, 0, 0, var(--card-shadow-alpha)),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   transform: rotateY(180deg);
-  justify-content: center;
-  gap: 1.5rem;
+  justify-content: flex-start;
+  gap: 0;
+  padding-bottom: 3rem;
 }
 
 /* Decorative inner border on back */
@@ -504,47 +505,34 @@
   transform: scale(-1);
 }
 
-.card-question-vi {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.6;
-  text-align: center;
-  color: var(--text-primary);
-  z-index: 1;
-}
-
-/* Quote-mark wrapper */
-.card-question-wrap {
-  position: relative;
-  z-index: 1;
+/* Question group — vertically centers the question content within card-back */
+.card-question-group {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
+  justify-content: center;
+  gap: 1rem;
+  margin: auto 0;
+  z-index: 1;
+  min-height: 0;
 }
 
-.card-question-wrap::before,
-.card-question-wrap::after {
+.card-question-vi {
   font-family: var(--font-display);
-  font-size: 3.5rem;
-  line-height: 0.6;
-  color: var(--accent);
-  opacity: 0.22;
-  pointer-events: none;
-  display: block;
-  align-self: flex-start;
+  font-size: var(--fs-question-vi);
+  font-weight: 600;
+  line-height: var(--fs-question-vi-lh);
+  text-align: center;
+  color: var(--text-primary);
+  z-index: 1;
+  display: inline;
 }
 
-.card-question-wrap::before {
-  content: '\201C';
-  margin-bottom: 0.15rem;
-}
-
-.card-question-wrap::after {
-  content: '\201D';
-  align-self: flex-end;
-  margin-top: 0.15rem;
+/* Quote-mark wrapper — inline quotes to save vertical space */
+.card-question-wrap {
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
 .card-divider {
@@ -556,9 +544,9 @@
 }
 
 .card-question-en {
-  font-size: 0.95rem;
+  font-size: var(--fs-question-en);
   font-style: italic;
-  line-height: 1.6;
+  line-height: var(--fs-question-en-lh);
   text-align: center;
   color: var(--text-secondary);
   z-index: 1;
@@ -644,13 +632,12 @@
 
 /* ---------- Feedback Buttons (like/dislike) ---------- */
 .card-feedback {
-  position: absolute;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
+  justify-content: center;
   gap: 0.75rem;
   z-index: 3;
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 .feedback-btn {
@@ -703,6 +690,54 @@
   background: rgba(233, 69, 96, 0.18);
   border-color: rgba(233, 69, 96, 0.4);
   color: var(--accent);
+}
+
+.feedback-btn.feedback-pop {
+  animation: feedbackPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes feedbackPop {
+  0% {
+    transform: scale(0.6) rotate(-8deg);
+    opacity: 0.6;
+  }
+  30% {
+    transform: scale(1.25) rotate(4deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.92) rotate(-2deg);
+  }
+  70% {
+    transform: scale(1.08) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.feedback-btn.feedback-pop .feedback-icon {
+  animation: feedbackIconBurst 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes feedbackIconBurst {
+  0% {
+    transform: scale(0.5) rotate(-15deg);
+    filter: brightness(0.8);
+  }
+  35% {
+    transform: scale(1.5) rotate(10deg);
+    filter: brightness(1.4);
+  }
+  60% {
+    transform: scale(0.85) rotate(-3deg);
+    filter: brightness(1);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
 }
 
 /* ---------- Swipe Hint ---------- */

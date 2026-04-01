@@ -1,129 +1,171 @@
 {
-	"id": "first-sparks",
-	"name_vi": "Rung động",
-	"name_en": "Time Machine",
-	"color": "#FF6B9D",
-	"icon": "💘",
-	"questions": [
-		{
-			"id": 1,
-			"tag": "light",
-			"text_vi": "Bài hát nào gợi lên cảm giác yêu thương và rung động trong bạn? Kể cho mình nghe về nó.",
-			"text_en": "What song evokes feelings of love and excitement in you? Tell me about it."
-		},
-		{
-			"id": 2,
-			"tag": "light",
-			"text_vi": "Nếu phải mô tả cảm giác rung động bằng một màu sắc, bạn sẽ chọn màu gì và vì sao?",
-			"text_en": "If you had to describe the feeling of a crush using a color, what would it be and why?"
-		},
-		{
-			"id": 3,
-			"tag": "light",
-			"text_vi": "Điều gì khiến một cuộc trò chuyện đầu tiên trở nên đáng nhớ với bạn?",
-			"text_en": "What makes a first conversation memorable to you?"
-		},
-		{
-			"id": 4,
-			"tag": "light",
-			"text_vi": "Khi gặp ai đó đặc biệt, bạn thường chú ý đến chi tiết nào đầu tiên?",
-			"text_en": "When you meet someone special, what details do you notice first?"
-		},
-		{
-			"id": 5,
-			"tag": "light",
-			"text_vi": "Giữa một tin nhắn ngọt ngào lúc nửa đêm và một cái nhìn bất chợt, điều nào khiến bạn rung động hơn? Vì sao?",
-			"text_en": "Between a sweet midnight text and an unexpected glance, which makes your heart flutter more? Why?"
-		},
-		{
-			"id": 6,
-			"tag": "medium",
-			"text_vi": "Hãy kể về lần đầu tiên bạn cảm thấy 'bướm bay trong bụng' — khoảnh khắc đó như thế nào?",
-			"text_en": "Tell me about the first time you felt butterflies in your stomach — what was that moment like?"
-		},
-		{
-			"id": 7,
-			"tag": "medium",
-			"text_vi": "Điều gì ở một người khiến bạn bị thu hút ngay từ lần gặp đầu tiên?",
-			"text_en": "What about a person attracts you right from the first meeting?"
-		},
-		{
-			"id": 8,
-			"tag": "medium",
-			"text_vi": "Khi bắt đầu thích ai đó, bạn thường bị rung động vì ngoại hình, giọng nói, hay tính cách trước? Hãy kể thêm.",
-			"text_en": "When you start liking someone, are you usually attracted to appearance, voice, or personality first? Tell me more."
-		},
-		{
-			"id": 9,
-			"tag": "medium",
-			"text_vi": "Dấu hiệu nào cho thấy bạn đang bắt đầu thích một ai đó — dù bạn chưa muốn thừa nhận?",
-			"text_en": "What are the signs that you're starting to like someone — even if you haven't admitted it yet?"
-		},
-		{
-			"id": 10,
-			"tag": "medium",
-			"text_vi": "Khi biết mình đang bắt đầu thích ai đó, bạn thường phản ứng như thế nào? Hãy mô tả.",
-			"text_en": "When you realize you're starting to like someone, how do you usually react? Describe it."
-		},
-		{
-			"id": 11,
-			"tag": "medium",
-			"text_vi": "Tình bạn chuyển thành tình yêu thường bắt đầu từ đâu theo bạn? Hãy chia sẻ góc nhìn của bạn.",
-			"text_en": "Where does friendship turning into love usually begin in your view? Share your perspective."
-		},
-		{
-			"id": 12,
-			"tag": "medium",
-			"text_vi": "Mô tả cảm giác khi bạn nhận ra ai đó cũng đang quan tâm đến mình.",
-			"text_en": "Describe the feeling when you realize someone is also interested in you."
-		},
-		{
-			"id": 13,
-			"tag": "deep",
-			"text_vi": "Điều gì tạo nên 'chemistry' giữa hai người theo bạn? Hãy mô tả cảm giác đó.",
-			"text_en": "What creates chemistry between two people in your view? Describe that feeling."
-		},
-		{
-			"id": 14,
-			"tag": "deep",
-			"text_vi": "Khoảnh khắc nào khiến bạn nhận ra mình đang yêu — thực sự yêu?",
-			"text_en": "What moment made you realize you were falling in love — truly in love?"
-		},
-		{
-			"id": 15,
-			"tag": "deep",
-			"text_vi": "Hành động nhỏ nào của ai đó từng khiến bạn nhớ mãi không quên? Kể cho mình nghe.",
-			"text_en": "What small gesture from someone stayed in your memory forever? Tell me about it."
-		},
-		{
-			"id": 16,
-			"tag": "medium",
-			"text_vi": "Kỷ niệm nào trong tháng đầu tiên quen nhau mà bạn muốn chúng ta 'diễn lại' chính xác vào cuối tuần này?",
-			"text_en": "What memory from our first month together do you want us to re-enact exactly this weekend?"
-		},
-		{
-			"id": 17,
-			"tag": "medium",
-			"text_vi": "Hãy nhắm mắt lại. Nếu bây giờ mình muốn tạo lại cảm giác bối rối của lần hẹn hò đầu, mình nên làm gì ngay lúc này?",
-			"text_en": "Close your eyes. If I wanted to recreate the flustered feeling of our first date right now, what should I do?"
-		},
-		{
-			"id": 18,
-			"tag": "deep",
-			"text_vi": "Lời tán tỉnh nào của mình ngày xưa khiến bạn 'đổ' gục nhất? Hãy nói lại câu đó với mình bằng cảm xúc của ngày hôm nay.",
-			"text_en": "What old flirting line of mine made you fall the hardest? Say it back to me with today's feelings."
-		},
-		{
-			"id": 19,
-			"tag": "deep",
-			"text_vi": "Có một địa điểm cũ nào của chúng ta mà lâu rồi chưa quay lại không? Mình chốt lịch đi luôn nhé?",
-			"text_en": "Is there an old spot of ours we haven't visited in a while? Shall we set a date to go?"
-		},
-		{
-			"id": 20,
-			"tag": "sensitive",
-			"text_vi": "Giữa những bộn bề hiện tại, bạn có thấy chúng ta đang đánh mất thói quen lãng mạn nào của ngày xưa không? Hôm nay hãy bắt đầu làm lại nó nhé!",
-			"text_en": "Amidst current chaos, do you feel we're losing any romantic habits from the past? Let's start doing it again today!"
-		}
-	]
+  "id": "first-sparks",
+  "name_vi": "Rung động",
+  "name_en": "Time Machine",
+  "name_zh": "心动",
+  "name_ja": "ときめき",
+  "color": "#FF6B9D",
+  "icon": "💘",
+  "questions": [
+    {
+      "id": 1,
+      "tag": "light",
+      "text_vi": "Bài hát nào gợi lên cảm giác yêu thương và rung động trong bạn? Kể cho mình nghe về nó.",
+      "text_en": "What song evokes feelings of love and excitement in you? Tell me about it.",
+      "text_zh": "哪首歌能唤起你内心爱与心动的感觉？跟我讲讲吧。",
+      "text_ja": "どんな曲が愛やときめきを呼び起こしますか？それについて教えてください。"
+    },
+    {
+      "id": 2,
+      "tag": "light",
+      "text_vi": "Nếu phải mô tả cảm giác rung động bằng một màu sắc, bạn sẽ chọn màu gì và vì sao?",
+      "text_en": "If you had to describe the feeling of a crush using a color, what would it be and why?",
+      "text_zh": "如果必须用一种颜色来形容心动的感觉，你会选什么颜色？为什么？",
+      "text_ja": "ときめきを色で表すとしたら、何色を選びますか？その理由も教えてください。"
+    },
+    {
+      "id": 3,
+      "tag": "light",
+      "text_vi": "Điều gì khiến một cuộc trò chuyện đầu tiên trở nên đáng nhớ với bạn?",
+      "text_en": "What makes a first conversation memorable to you?",
+      "text_zh": "是什么让初次交谈让你难以忘怀？",
+      "text_ja": "あなたにとって、初めての会話で印象に残るのはどんなことですか？"
+    },
+    {
+      "id": 4,
+      "tag": "light",
+      "text_vi": "Khi gặp ai đó đặc biệt, bạn thường chú ý đến chi tiết nào đầu tiên?",
+      "text_en": "When you meet someone special, what details do you notice first?",
+      "text_zh": "当遇到特别的人时，你通常最先注意到什么细节？",
+      "text_ja": "特別な人に会ったとき、最初にどんな細部に気がつきますか？"
+    },
+    {
+      "id": 5,
+      "tag": "light",
+      "text_vi": "Giữa một tin nhắn ngọt ngào lúc nửa đêm và một cái nhìn bất chợt, điều nào khiến bạn rung động hơn? Vì sao?",
+      "text_en": "Between a sweet midnight text and an unexpected glance, which makes your heart flutter more? Why?",
+      "text_zh": "午夜的甜蜜短信和不经意的一瞥，哪个更让你心动？为什么？",
+      "text_ja": "真夜中の甘いメッセージとふとした瞬間の視線、どちらがより胸をときめかせますか？それはなぜですか？"
+    },
+    {
+      "id": 6,
+      "tag": "medium",
+      "text_vi": "Hãy kể về lần đầu tiên bạn cảm thấy 'bướm bay trong bụng' — khoảnh khắc đó như thế nào?",
+      "text_en": "Tell me about the first time you felt butterflies in your stomach — what was that moment like?",
+      "text_zh": "跟我说说你第一次感到“小鹿乱撞”的情景——那一刻是怎样的？",
+      "text_ja": "初めて「胸がドキドキした」ときのことについて教えてください。その瞬間はどんな感じでしたか？"
+    },
+    {
+      "id": 7,
+      "tag": "medium",
+      "text_vi": "Điều gì ở một người khiến bạn bị thu hút ngay từ lần gặp đầu tiên?",
+      "text_en": "What about a person attracts you right from the first meeting?",
+      "text_zh": "一个人的什么特质会在初次见面时就吸引你？",
+      "text_ja": "初対面のとき、相手のどんなところに惹かれますか？"
+    },
+    {
+      "id": 8,
+      "tag": "medium",
+      "text_vi": "Khi bắt đầu thích ai đó, bạn thường bị rung động vì ngoại hình, giọng nói, hay tính cách trước? Hãy kể thêm.",
+      "text_en": "When you start liking someone, are you usually attracted to appearance, voice, or personality first? Tell me more.",
+      "text_zh": "当你开始喜欢一个人时，通常是最先被外貌、声音还是性格打动？请多说说。",
+      "text_ja": "誰かを好きになり始めるとき、通常は外見、声、性格のどれに最初に惹かれますか？詳しく教えてください。"
+    },
+    {
+      "id": 9,
+      "tag": "medium",
+      "text_vi": "Dấu hiệu nào cho thấy bạn đang bắt đầu thích một ai đó — dù bạn chưa muốn thừa nhận?",
+      "text_en": "What are the signs that you're starting to like someone — even if you haven't admitted it yet?",
+      "text_zh": "有哪些迹象表明你开始喜欢某个人——即使你还不想承认？",
+      "text_ja": "自分がまだ認めたくなくても、誰かを好きになり始めているサインは何ですか？"
+    },
+    {
+      "id": 10,
+      "tag": "medium",
+      "text_vi": "Khi biết mình đang bắt đầu thích ai đó, bạn thường phản ứng như thế nào? Hãy mô tả.",
+      "text_en": "When you realize you're starting to like someone, how do you usually react? Describe it.",
+      "text_zh": "当意识到自己开始喜欢某个人时，你通常会有什么反应？请描述一下。",
+      "text_ja": "誰かを好きになり始めていると気づいたとき、普段どんな反応をしますか？説明してください。"
+    },
+    {
+      "id": 11,
+      "tag": "medium",
+      "text_vi": "Tình bạn chuyển thành tình yêu thường bắt đầu từ đâu theo bạn? Hãy chia sẻ góc nhìn của bạn.",
+      "text_en": "Where does friendship turning into love usually begin in your view? Share your perspective.",
+      "text_zh": "在你看来，友情转变为爱情通常是从哪里开始的？分享一下你的观点。",
+      "text_ja": "友情が恋愛に変わるのは、普段どこから始まると思いますか？あなたの考えを共有してください。"
+    },
+    {
+      "id": 12,
+      "tag": "medium",
+      "text_vi": "Mô tả cảm giác khi bạn nhận ra ai đó cũng đang quan tâm đến mình.",
+      "text_en": "Describe the feeling when you realize someone is also interested in you.",
+      "text_zh": "描述一下当你发现某人也对你感兴趣时的感觉。",
+      "text_ja": "誰かが自分に興味を持っていると気づいたときの気持ちを表現してください。"
+    },
+    {
+      "id": 13,
+      "tag": "deep",
+      "text_vi": "Điều gì tạo nên 'chemistry' giữa hai người theo bạn? Hãy mô tả cảm giác đó.",
+      "text_en": "What creates chemistry between two people in your view? Describe that feeling.",
+      "text_zh": "你认为是什么在两个人之间产生了“化学反应”？请描述那种感觉。",
+      "text_ja": "二人の間に「相性の良さ（ケミストリー）」を生み出すものは何だと思いますか？その感覚を説明してください。"
+    },
+    {
+      "id": 14,
+      "tag": "deep",
+      "text_vi": "Khoảnh khắc nào khiến bạn nhận ra mình đang yêu — thực sự yêu?",
+      "text_en": "What moment made you realize you were falling in love — truly in love?",
+      "text_zh": "哪个瞬间让你意识到自己坠入爱河了——真正地爱上了？",
+      "text_ja": "自分が恋に落ちている、本当に愛していると気づいたのはどんな瞬間ですか？"
+    },
+    {
+      "id": 15,
+      "tag": "deep",
+      "text_vi": "Hành động nhỏ nào của ai đó từng khiến bạn nhớ mãi không quên? Kể cho mình nghe.",
+      "text_en": "What small gesture from someone stayed in your memory forever? Tell me about it.",
+      "text_zh": "某人曾经做过的哪个小举动让你难以忘怀？跟我讲讲。",
+      "text_ja": "ずっと記憶に残っている、誰かのささやかな行動は何ですか？それについて教えてください。"
+    },
+    {
+      "id": 16,
+      "tag": "medium",
+      "text_vi": "Kỷ niệm nào trong tháng đầu tiên quen nhau mà bạn muốn chúng ta 'diễn lại' chính xác vào cuối tuần này?",
+      "text_en": "What memory from our first month together do you want us to re-enact exactly this weekend?",
+      "text_zh": "我们认识第一个月里的哪段回忆，你希望我们这个周末能完美“重演”？",
+      "text_ja": "付き合い始めた最初の月のどんな思い出を、今週末にそっくりそのまま「再現」したいですか？"
+    },
+    {
+      "id": 17,
+      "tag": "medium",
+      "text_vi": "Hãy nhắm mắt lại. Nếu bây giờ mình muốn tạo lại cảm giác bối rối của lần hẹn hò đầu, mình nên làm gì ngay lúc này?",
+      "text_en": "Close your eyes. If I wanted to recreate the flustered feeling of our first date right now, what should I do?",
+      "text_zh": "闭上眼睛。如果我现在想重现我们第一次约会时的那种慌乱感，我此刻该怎么做？",
+      "text_ja": "目を閉じて。初めてのデートのときのドキドキ感を今すぐ再現したいなら、私はどうすればいいですか？"
+    },
+    {
+      "id": 18,
+      "tag": "deep",
+      "text_vi": "Lời tán tỉnh nào của mình ngày xưa khiến bạn 'đổ' gục nhất? Hãy nói lại câu đó với mình bằng cảm xúc của ngày hôm nay.",
+      "text_en": "What old flirting line of mine made you fall the hardest? Say it back to me with today's feelings.",
+      "text_zh": "以前我说的哪句情话最让你“沦陷”？用今天的情感再对我复述一遍那句话吧。",
+      "text_ja": "昔の私のアプローチで一番心を奪われた言葉は何ですか？今日の気持ちを込めて、私にその言葉を言い返してみてください。"
+    },
+    {
+      "id": 19,
+      "tag": "deep",
+      "text_vi": "Có một địa điểm cũ nào của chúng ta mà lâu rồi chưa quay lại không? Mình chốt lịch đi luôn nhé?",
+      "text_en": "Is there an old spot of ours we haven't visited in a while? Shall we set a date to go?",
+      "text_zh": "我们有没有什么很久没去的“老地方”？我们现在就定个时间去吧？",
+      "text_ja": "しばらく行っていない、私たちにとって懐かしい場所はありますか？いつ行くか今予定を決めましょうか？"
+    },
+    {
+      "id": 20,
+      "tag": "sensitive",
+      "text_vi": "Giữa những bộn bề hiện tại, bạn có thấy chúng ta đang đánh mất thói quen lãng mạn nào của ngày xưa không? Hôm nay hãy bắt đầu làm lại nó nhé!",
+      "text_en": "Amidst current chaos, do you feel we're losing any romantic habits from the past? Let's start doing it again today!",
+      "text_zh": "在目前的忙碌中，你觉得我们是否丢失了过去的某个浪漫习惯？今天就开始重新做起来吧！",
+      "text_ja": "今の慌ただしい生活の中で、昔のロマンチックな習慣を失いつつあると感じませんか？今日からまたそれを始めましょう！"
+    }
+  ]
 }

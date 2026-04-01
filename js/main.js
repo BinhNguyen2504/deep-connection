@@ -8,23 +8,49 @@ DC.init = async function init() {
   try {
     DC.initRefs();
     DC.initTheme();
+    DC.initSound();
+    DC.initLanguage();
+    DC.initFontSize();
 
     const categoryPromises = DC.CATEGORY_FILES.map(async (id) => {
       const res = await fetch(`data/${id}.json`);
       if (!res.ok) throw new Error(`Failed to load ${id}.json`);
       return res.json();
     });
-    DC.state.categories = await Promise.all(categoryPromises);
+    // Load categories and reaction counts in parallel
+    var results = await Promise.allSettled([
+      Promise.all(categoryPromises),
+      DC.loadReactionCounts(),
+    ]);
+    if (results[0].status === 'rejected') throw results[0].reason;
+    DC.state.categories = results[0].value;
     DC.renderCategories();
     DC.bindGlobalEvents();
     DC.bindCoverEvents();
     DC.bindInfoEvents();
+    DC.bindContributeEvents();
+    DC.bindSettingsEvents();
   } catch (err) {
     console.error('Error loading data:', err);
     DC.refs.categoryGrid.innerHTML =
       '<div style="grid-column:1/-1;text-align:center;color:var(--text-muted);padding:2rem;">' +
-      '⚠️ Không thể tải dữ liệu. Vui lòng kiểm tra lại các file trong thư mục <code>data/.' +
+      DC.t('loadError') +
       '</div>';
+  }
+};
+
+// ────────────── HOME SCROLL → HIDE BUTTONS ──────────────
+DC.handleHomeScroll = function handleHomeScroll() {
+  var el = DC.refs.homeTopActions;
+  var scrollTop = DC.refs.homeContainer.scrollTop;
+  var THRESHOLD = 50;
+  var ratio = Math.max(0, 1 - scrollTop / THRESHOLD);
+  el.style.transform = 'scale(' + ratio + ')';
+  el.style.opacity = ratio;
+  if (ratio === 0) {
+    el.classList.add('hidden-by-scroll');
+  } else {
+    el.classList.remove('hidden-by-scroll');
   }
 };
 
@@ -32,14 +58,14 @@ DC.init = async function init() {
 DC.bindGlobalEvents = function bindGlobalEvents() {
   const r = DC.refs;
 
-  r.btnBack.addEventListener('click', () => {
-    DC.switchScreen(r.screenHome);
+  r.homeContainer.addEventListener('scroll', DC.handleHomeScroll, {
+    passive: true,
   });
 
-  document.querySelectorAll('.theme-toggle').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      DC.toggleTheme();
+  r.btnBack.addEventListener('click', () => {
+    DC.switchScreen(r.screenHome, {
+      exit: 'screen-exit-right',
+      enter: 'screen-enter-left',
     });
   });
 
@@ -89,12 +115,43 @@ DC.bindGlobalEvents = function bindGlobalEvents() {
 
   r.btnHome.addEventListener('click', () => {
     DC.hideModal();
-    DC.switchScreen(r.screenHome);
+    DC.switchScreen(r.screenHome, {
+      exit: 'screen-exit-right',
+      enter: 'screen-enter-left',
+    });
   });
 
   // Keyboard support
   document.addEventListener('keydown', (e) => {
+    // Settings sheet takes priority
+    if (e.key === 'Escape' && r.settingsOverlay.classList.contains('visible')) {
+      DC.hideSettings();
+      return;
+    }
+
     if (!r.screenPlay.classList.contains('active')) return;
+
+    // Escape always works — close modals or go back
+    if (e.key === 'Escape') {
+      if (r.modalContribute.classList.contains('visible')) {
+        DC.hideContributeModal();
+      } else if (r.modalReset.classList.contains('visible')) {
+        DC.hideModal();
+      } else {
+        DC.switchScreen(r.screenHome, {
+          exit: 'screen-exit-right',
+          enter: 'screen-enter-left',
+        });
+      }
+      return;
+    }
+
+    // Don't intercept keys when a modal is open (e.g. contribute form)
+    if (
+      r.modalContribute.classList.contains('visible') ||
+      r.modalReset.classList.contains('visible')
+    )
+      return;
 
     if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
       e.preventDefault();
@@ -127,23 +184,21 @@ DC.bindGlobalEvents = function bindGlobalEvents() {
       e.preventDefault();
       DC.prevCard();
     }
-
-    if (e.key === 'Escape') {
-      if (r.modalReset.classList.contains('visible')) {
-        DC.hideModal();
-      } else {
-        DC.switchScreen(r.screenHome);
-      }
-    }
   });
 
   // Info button
   r.btnInfo.addEventListener('click', () => {
-    DC.switchScreen(r.screenInfo);
+    DC.switchScreen(r.screenInfo, {
+      exit: 'screen-exit-scale-down',
+      enter: 'screen-enter-up',
+    });
   });
 
   r.btnInfoBack.addEventListener('click', () => {
-    DC.switchScreen(r.screenHome);
+    DC.switchScreen(r.screenHome, {
+      exit: 'screen-exit-down',
+      enter: 'screen-enter-scale-up',
+    });
   });
 };
 

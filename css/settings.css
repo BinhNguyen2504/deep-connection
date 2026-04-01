@@ -1,0 +1,476 @@
+/* ==========================================
+   SETTINGS BOTTOM SHEET
+   ========================================== */
+
+/* ---------- Overlay / Backdrop ---------- */
+.settings-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--modal-bg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.settings-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- Sheet ---------- */
+.settings-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 201;
+  background: var(--bg-secondary);
+  border-radius: 20px 20px 0 0;
+  max-height: 70vh;
+  overflow-y: auto;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.settings-overlay.visible + .settings-sheet,
+.settings-sheet.visible {
+  transform: translateY(0);
+}
+
+/* ---------- Drag Handle ---------- */
+.settings-handle {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0 4px;
+}
+
+.settings-handle-bar {
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--text-muted);
+  opacity: 0.4;
+}
+
+/* ---------- Header ---------- */
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1.25rem 0.75rem;
+}
+
+.settings-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.settings-close {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--btn-bg);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  transition: background 0.2s ease;
+}
+
+.settings-close:active {
+  background: var(--btn-active-bg);
+}
+
+/* ---------- Body ---------- */
+.settings-body {
+  padding: 0 1.25rem 1.5rem;
+}
+
+/* ---------- Setting Row ---------- */
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.12);
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.settings-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.settings-row-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.settings-row-sublabel {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Icon Button (Theme / Sound) ---------- */
+.settings-icon-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--btn-bg);
+  border: 1.5px solid rgba(128, 128, 128, 0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  transition:
+    background 0.2s ease,
+    transform 0.3s ease;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.settings-icon-btn:active {
+  background: var(--btn-active-bg);
+  transform: scale(0.92);
+}
+
+/* ---------- Theme Toggle Animation ---------- */
+.settings-theme-icon-wrap {
+  position: relative;
+  width: 26px;
+  height: 26px;
+}
+
+.theme-icon-sun,
+.theme-icon-moon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+}
+
+/* Dark theme (default): moon visible, sun hidden */
+.theme-icon-sun {
+  color: #f59e0b;
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
+}
+
+.theme-icon-moon {
+  color: #94a3b8;
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Light theme: sun visible, moon hidden */
+[data-theme='light'] .theme-icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+[data-theme='light'] .theme-icon-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.4);
+}
+
+/* Rays spin animation on hover */
+.settings-theme-animated:hover .theme-icon-sun svg,
+.settings-theme-animated:hover .theme-icon-moon svg {
+  animation: theme-wiggle 0.6s ease-in-out;
+}
+
+@keyframes theme-wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* ---------- Sound Toggle Animation ---------- */
+.settings-sound-icon-wrap {
+  position: relative;
+  width: 26px;
+  height: 26px;
+}
+
+.sound-icon-on,
+.sound-icon-off {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease;
+}
+
+/* Default: sound ON visible */
+.sound-icon-on {
+  color: var(--accent, #ff6b9d);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sound-icon-off {
+  color: var(--text-muted);
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+/* Sound disabled state (toggled via JS class) */
+.settings-sound-animated.sound-disabled .sound-icon-on {
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.settings-sound-animated.sound-disabled .sound-icon-off {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Bounce animation on click */
+@keyframes sound-bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(0.85);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.settings-sound-animated.sound-animating {
+  animation: sound-bounce 0.35s ease;
+}
+
+/* ---------- Language Selector ---------- */
+.settings-lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--btn-bg);
+  border: 1.5px solid rgba(128, 128, 128, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.settings-lang-btn:active {
+  background: var(--btn-active-bg);
+  transform: scale(0.95);
+}
+
+.settings-lang-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 18px;
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.settings-lang-flag svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.settings-lang-btn:active .settings-lang-flag {
+  transform: scale(0.9);
+}
+
+/* Language switch animation */
+@keyframes flag-swap {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(-6px) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(6px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.settings-lang-flag.flag-animating {
+  animation: flag-swap 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.settings-lang-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+  min-width: 3.2em;
+  text-align: center;
+}
+
+/* ---------- Font Size Segment Control ---------- */
+.settings-font-size-group {
+  display: flex;
+  gap: 0;
+  background: var(--btn-bg);
+  border: 1.5px solid rgba(128, 128, 128, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.settings-font-size-btn {
+  padding: 6px 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+  position: relative;
+  white-space: nowrap;
+  min-width: 3em;
+  text-align: center;
+}
+
+.settings-font-size-btn:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(128, 128, 128, 0.15);
+  transition: opacity 0.25s ease;
+}
+
+.settings-font-size-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.settings-font-size-btn.active::after,
+.settings-font-size-btn.active + .settings-font-size-btn::after {
+  opacity: 0;
+}
+
+.settings-font-size-btn:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Gear / Settings Toggle Button ---------- */
+.settings-toggle {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--btn-bg);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition:
+    background 0.2s ease,
+    transform 0.3s ease;
+}
+
+.settings-toggle:active {
+  background: var(--btn-active-bg);
+  transform: scale(0.92);
+}
+
+.settings-toggle svg {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.settings-toggle:hover svg {
+  transform: rotate(45deg);
+}
+
+/* ---------- Light Theme Overrides ---------- */
+[data-theme='light'] .settings-sheet {
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .settings-row {
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='light'] .settings-icon-btn {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .settings-lang-btn {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .settings-font-size-group {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 600px) {
+  .settings-sheet {
+    max-width: 420px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+  }
+
+  .settings-overlay.visible + .settings-sheet,
+  .settings-sheet.visible {
+    transform: translateX(-50%) translateY(0);
+  }
+}

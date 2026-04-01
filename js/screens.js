@@ -20,11 +20,37 @@ DC.hideModal = function hideModal() {
 };
 
 // ────────────── SCREEN SWITCH ──────────────
-DC.switchScreen = function switchScreen(target) {
-  document.querySelectorAll('.screen').forEach((s) => {
-    s.classList.remove('active');
-  });
-  target.classList.add('active');
+DC.switchScreen = function switchScreen(target, transition) {
+  var currentScreen = document.querySelector('.screen.active');
+
+  if (!transition || !currentScreen || currentScreen === target) {
+    document.querySelectorAll('.screen').forEach(function (s) {
+      s.classList.remove('active');
+    });
+    target.classList.add('active');
+    return;
+  }
+
+  if (DC.state.isTransitioning) return;
+  DC.state.isTransitioning = true;
+
+  var exit = transition.exit;
+  var enter = transition.enter;
+
+  target.classList.add('active', enter);
+  currentScreen.classList.add(exit);
+
+  var cleaned = false;
+  var cleanup = function () {
+    if (cleaned) return;
+    cleaned = true;
+    currentScreen.classList.remove('active', exit);
+    target.classList.remove(enter);
+    DC.state.isTransitioning = false;
+  };
+
+  target.addEventListener('animationend', cleanup, { once: true });
+  setTimeout(cleanup, 500);
 };
 
 // ────────────── COVER SCREEN ──────────────
@@ -61,8 +87,15 @@ DC.bindInfoEvents = function bindInfoEvents() {
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && DC.refs.screenInfo.classList.contains('active')) {
-      DC.switchScreen(DC.refs.screenHome);
+    if (
+      e.key === 'Escape' &&
+      DC.refs.screenInfo.classList.contains('active') &&
+      !DC.refs.settingsOverlay.classList.contains('visible')
+    ) {
+      DC.switchScreen(DC.refs.screenHome, {
+        exit: 'screen-exit-down',
+        enter: 'screen-enter-scale-up',
+      });
     }
   });
 };

@@ -1,129 +1,171 @@
 {
-	"id": "bonding",
-	"name_vi": "Gắn kết",
-	"name_en": "Bonding",
-	"color": "#FF9FF3",
-	"icon": "💕",
-	"questions": [
-		{
-			"id": 1,
-			"tag": "light",
-			"text_vi": "Hoạt động nào bạn thích làm cùng người yêu nhất? Vì sao hoạt động đó đặc biệt với bạn?",
-			"text_en": "What activity do you enjoy doing most with your partner? Why is that activity special to you?"
-		},
-		{
-			"id": 2,
-			"tag": "light",
-			"text_vi": "Điều nhỏ bé, bình dị nào trong tình yêu khiến bạn hạnh phúc nhất? Hãy kể chi tiết.",
-			"text_en": "What small, simple thing in love makes you happiest? Tell me in detail."
-		},
-		{
-			"id": 3,
-			"tag": "light",
-			"text_vi": "Món quà ý nghĩa nhất bạn từng nhận được từ người mình yêu là gì? Vì sao nó đặc biệt?",
-			"text_en": "What is the most meaningful gift you've ever received from someone you loved? Why was it special?"
-		},
-		{
-			"id": 4,
-			"tag": "light",
-			"text_vi": "Truyền thống hoặc thói quen nào bạn muốn tạo dựng riêng cho hai người?",
-			"text_en": "What traditions or routines would you like to create just for the two of you?"
-		},
-		{
-			"id": 5,
-			"tag": "medium",
-			"text_vi": "Bạn thể hiện tình yêu theo cách nào mà người khác có thể không nhận ra? Hãy kể về những cách riêng của bạn.",
-			"text_en": "How do you show love in ways others might not notice? Tell me about your unique ways."
-		},
-		{
-			"id": 6,
-			"tag": "medium",
-			"text_vi": "Khi cần xử lý khoảng cách — cả vật lý lẫn cảm xúc — bạn thường làm gì?",
-			"text_en": "When you need to handle distance — both physical and emotional — what do you usually do?"
-		},
-		{
-			"id": 7,
-			"tag": "medium",
-			"text_vi": "Khi người yêu có thói quen khác biệt mà bạn không quen, bạn sẽ xử lý ra sao?",
-			"text_en": "When your partner has a different habit you're not used to, how do you handle it?"
-		},
-		{
-			"id": 8,
-			"tag": "medium",
-			"text_vi": "Điều gì khiến bạn ngưỡng mộ nhất ở một cặp đôi lâu năm bạn biết? Hãy kể về họ.",
-			"text_en": "What do you admire most about a long-term couple you know? Tell me about them."
-		},
-		{
-			"id": 9,
-			"tag": "medium",
-			"text_vi": "Điều gì bạn sẵn sàng làm cho người yêu mà không cần họ phải yêu cầu?",
-			"text_en": "What would you willingly do for your partner without them having to ask?"
-		},
-		{
-			"id": 10,
-			"tag": "deep",
-			"text_vi": "Điều gì khiến bạn cảm thấy an toàn và được che chở nhất trong tình yêu?",
-			"text_en": "What makes you feel safest and most protected in love?"
-		},
-		{
-			"id": 11,
-			"tag": "deep",
-			"text_vi": "Điều gì quan trọng nhất để hai người có thể đi cùng nhau thật lâu theo bạn?",
-			"text_en": "What do you think is most important for two people to stay together for a long time?"
-		},
-		{
-			"id": 12,
-			"tag": "deep",
-			"text_vi": "Bạn muốn xây dựng những kỷ niệm nào cùng người mình yêu? Hãy vẽ ra bức tranh đó.",
-			"text_en": "What memories do you want to build with the person you love? Paint that picture."
-		},
-		{
-			"id": 13,
-			"tag": "deep",
-			"text_vi": "Điều gì khiến bạn quyết định gắn bó và chọn ở lại với một người?",
-			"text_en": "What makes you decide to commit and choose to stay with someone?"
-		},
-		{
-			"id": 14,
-			"tag": "deep",
-			"text_vi": "Bạn muốn được nhớ đến như thế nào trong mắt người yêu?",
-			"text_en": "How do you want to be remembered by the person you love?"
-		},
-		{
-			"id": 15,
-			"tag": "sensitive",
-			"text_vi": "Việc chia sẻ mật khẩu điện thoại có ý nghĩa gì trong mối quan hệ theo bạn? Hãy chia sẻ quan điểm.",
-			"text_en": "What does sharing phone passwords mean in a relationship to you? Share your view."
-		},
-		{
-			"id": 16,
-			"tag": "sensitive",
-			"text_vi": "Hai người nên phân chia việc nhà và trách nhiệm hàng ngày như thế nào?",
-			"text_en": "How should two people divide housework and daily responsibilities?"
-		},
-		{
-			"id": 17,
-			"tag": "sensitive",
-			"text_vi": "Thời gian riêng cho mỗi người và thời gian bên nhau nên cân bằng ra sao trong mối quan hệ?",
-			"text_en": "How should personal time and time together be balanced in a relationship?"
-		},
-		{
-			"id": 18,
-			"tag": "light",
-			"text_vi": "Trong hội bạn thân của mình, bạn cảm thấy thoải mái với ai nhất và e dè ai nhất? Vì sao?",
-			"text_en": "In my close group of friends, who do you feel most comfortable with and who are you most wary of? Why?"
-		},
-		{
-			"id": 19,
-			"tag": "medium",
-			"text_vi": "Một ngày cuối tuần mà cả hai không làm gì cả, chỉ ở nhà lướt điện thoại – đối với bạn là lãng phí thời gian hay là sự nạp năng lượng?",
-			"text_en": "A weekend where we do nothing but stay home and scroll on our phones — is that a waste of time or necessary recharging for you?"
-		},
-		{
-			"id": 20,
-			"tag": "deep",
-			"text_vi": "Làm thế nào để chúng ta vẫn cảm thấy gắn kết trong những ngày mà cả hai đều cạn kiệt năng lượng vì áp lực bên ngoài?",
-			"text_en": "How can we still feel connected on days when we are both drained of energy from outside pressures?"
-		}
-	]
+  "id": "bonding",
+  "name_vi": "Gắn kết",
+  "name_en": "Bonding",
+  "name_zh": "连结",
+  "name_ja": "絆",
+  "color": "#FF9FF3",
+  "icon": "💕",
+  "questions": [
+    {
+      "id": 1,
+      "tag": "light",
+      "text_vi": "Hoạt động nào bạn thích làm cùng người yêu nhất? Vì sao hoạt động đó đặc biệt với bạn?",
+      "text_en": "What activity do you enjoy doing most with your partner? Why is that activity special to you?",
+      "text_zh": "你最喜欢和伴侣一起做什么活动？为什么这个活动对你来说很特别？",
+      "text_ja": "パートナーと一緒に過ごすとき、どんなアクティビティが一番好きですか？なぜそれがあなたにとって特別なのですか？"
+    },
+    {
+      "id": 2,
+      "tag": "light",
+      "text_vi": "Điều nhỏ bé, bình dị nào trong tình yêu khiến bạn hạnh phúc nhất? Hãy kể chi tiết.",
+      "text_en": "What small, simple thing in love makes you happiest? Tell me in detail.",
+      "text_zh": "爱情中哪件微小而平凡的事让你感到最幸福？请详细说说。",
+      "text_ja": "恋愛において、どんなささやかでシンプルなことが一番幸せだと感じますか？詳しく教えてください。"
+    },
+    {
+      "id": 3,
+      "tag": "light",
+      "text_vi": "Món quà ý nghĩa nhất bạn từng nhận được từ người mình yêu là gì? Vì sao nó đặc biệt?",
+      "text_en": "What is the most meaningful gift you've ever received from someone you loved? Why was it special?",
+      "text_zh": "你收到过的来自爱人最有意义的礼物是什么？为什么它很特别？",
+      "text_ja": "愛する人から今までにもらった最も意味のある贈り物はなんですか？なぜそれが特別だったのですか？"
+    },
+    {
+      "id": 4,
+      "tag": "light",
+      "text_vi": "Truyền thống hoặc thói quen nào bạn muốn tạo dựng riêng cho hai người?",
+      "text_en": "What traditions or routines would you like to create just for the two of you?",
+      "text_zh": "你想为你们两个人建立什么专属的传统或习惯？",
+      "text_ja": "二人だけのどんな伝統やルーティンを作りたいですか？"
+    },
+    {
+      "id": 5,
+      "tag": "medium",
+      "text_vi": "Bạn thể hiện tình yêu theo cách nào mà người khác có thể không nhận ra? Hãy kể về những cách riêng của bạn.",
+      "text_en": "How do you show love in ways others might not notice? Tell me about your unique ways.",
+      "text_zh": "你如何以别人可能注意不到的方式表达爱？请告诉我你独特的方式。",
+      "text_ja": "他の人が気づかないような方法で、どのように愛を表現しますか？あなた独自のやり方を教えてください。"
+    },
+    {
+      "id": 6,
+      "tag": "medium",
+      "text_vi": "Khi cần xử lý khoảng cách — cả vật lý lẫn cảm xúc — bạn thường làm gì?",
+      "text_en": "When you need to handle distance — both physical and emotional — what do you usually do?",
+      "text_zh": "当你需要处理距离（物理上和情感上的）时，你通常会怎么做？",
+      "text_ja": "物理的、そして感情的な距離に対処する必要があるとき、普段どうしていますか？"
+    },
+    {
+      "id": 7,
+      "tag": "medium",
+      "text_vi": "Khi người yêu có thói quen khác biệt mà bạn không quen, bạn sẽ xử lý ra sao?",
+      "text_en": "When your partner has a different habit you're not used to, how do you handle it?",
+      "text_zh": "当你的伴侣有一个你不习惯的习惯时，你会如何处理？",
+      "text_ja": "パートナーにあなたの慣れない習慣がある場合、どのように対処しますか？"
+    },
+    {
+      "id": 8,
+      "tag": "medium",
+      "text_vi": "Điều gì khiến bạn ngưỡng mộ nhất ở một cặp đôi lâu năm bạn biết? Hãy kể về họ.",
+      "text_en": "What do you admire most about a long-term couple you know? Tell me about them.",
+      "text_zh": "你最欣赏你认识的一对长情伴侣的哪一点？请讲讲他们的故事。",
+      "text_ja": "あなたが知っている長く付き合っているカップルのどんなところを一番尊敬しますか？彼らについて教えてください。"
+    },
+    {
+      "id": 9,
+      "tag": "medium",
+      "text_vi": "Điều gì bạn sẵn sàng làm cho người yêu mà không cần họ phải yêu cầu?",
+      "text_en": "What would you willingly do for your partner without them having to ask?",
+      "text_zh": "你愿意为伴侣主动做什么，而不需要他们开口要求？",
+      "text_ja": "パートナーに頼まれなくても、進んでしてあげたいことは何ですか？"
+    },
+    {
+      "id": 10,
+      "tag": "deep",
+      "text_vi": "Điều gì khiến bạn cảm thấy an toàn và được che chở nhất trong tình yêu?",
+      "text_en": "What makes you feel safest and most protected in love?",
+      "text_zh": "在爱情中，什么让你感到最安全和受保护？",
+      "text_ja": "恋愛において、何が一番安全で守られていると感じさせますか？"
+    },
+    {
+      "id": 11,
+      "tag": "deep",
+      "text_vi": "Điều gì quan trọng nhất để hai người có thể đi cùng nhau thật lâu theo bạn?",
+      "text_en": "What do you think is most important for two people to stay together for a long time?",
+      "text_zh": "你认为两个人长久在一起最重要的是什么？",
+      "text_ja": "二人が長く一緒にいるために、一番大切なことは何だと思いますか？"
+    },
+    {
+      "id": 12,
+      "tag": "deep",
+      "text_vi": "Bạn muốn xây dựng những kỷ niệm nào cùng người mình yêu? Hãy vẽ ra bức tranh đó.",
+      "text_en": "What memories do you want to build with the person you love? Paint that picture.",
+      "text_zh": "你想和爱的人创造什么样的回忆？请描绘一下那幅画面。",
+      "text_ja": "愛する人とどんな思い出を作りたいですか？その情景を描いてみてください。"
+    },
+    {
+      "id": 13,
+      "tag": "deep",
+      "text_vi": "Điều gì khiến bạn quyết định gắn bó và chọn ở lại với một người?",
+      "text_en": "What makes you decide to commit and choose to stay with someone?",
+      "text_zh": "是什么让你决定做出承诺并选择留在某人身边？",
+      "text_ja": "誰かにコミットし、一緒にいることを選ぶ決め手は何ですか？"
+    },
+    {
+      "id": 14,
+      "tag": "deep",
+      "text_vi": "Bạn muốn được nhớ đến như thế nào trong mắt người yêu?",
+      "text_en": "How do you want to be remembered by the person you love?",
+      "text_zh": "你希望在爱人的记忆中是怎样的形象？",
+      "text_ja": "愛する人からどのように記憶されたいですか？"
+    },
+    {
+      "id": 15,
+      "tag": "sensitive",
+      "text_vi": "Việc chia sẻ mật khẩu điện thoại có ý nghĩa gì trong mối quan hệ theo bạn? Hãy chia sẻ quan điểm.",
+      "text_en": "What does sharing phone passwords mean in a relationship to you? Share your view.",
+      "text_zh": "对你来说，在恋爱关系中共享手机密码意味着什么？分享一下你的看法。",
+      "text_ja": "あなたにとって、恋愛関係でスマホのパスワードを共有することはどんな意味がありますか？あなたの意見を聞かせてください。"
+    },
+    {
+      "id": 16,
+      "tag": "sensitive",
+      "text_vi": "Hai người nên phân chia việc nhà và trách nhiệm hàng ngày như thế nào?",
+      "text_en": "How should two people divide housework and daily responsibilities?",
+      "text_zh": "两个人应该如何分担家务和日常责任？",
+      "text_ja": "二人で家事や日常の責任をどのように分担すべきですか？"
+    },
+    {
+      "id": 17,
+      "tag": "sensitive",
+      "text_vi": "Thời gian riêng cho mỗi người và thời gian bên nhau nên cân bằng ra sao trong mối quan hệ?",
+      "text_en": "How should personal time and time together be balanced in a relationship?",
+      "text_zh": "在一段关系中，个人时间和在一起的时间应该如何平衡？",
+      "text_ja": "恋愛関係において、一人の時間と二人の時間はどのようにバランスを取るべきですか？"
+    },
+    {
+      "id": 18,
+      "tag": "light",
+      "text_vi": "Trong hội bạn thân của mình, bạn cảm thấy thoải mái với ai nhất và e dè ai nhất? Vì sao?",
+      "text_en": "In my close group of friends, who do you feel most comfortable with and who are you most wary of? Why?",
+      "text_zh": "在我的好朋友圈里，你觉得和谁在一起最自在，对谁最防备？为什么？",
+      "text_ja": "私の仲の良い友人グループの中で、誰といるのが一番心地よく、誰を一番警戒しますか？それはなぜですか？"
+    },
+    {
+      "id": 19,
+      "tag": "medium",
+      "text_vi": "Một ngày cuối tuần mà cả hai không làm gì cả, chỉ ở nhà lướt điện thoại – đối với bạn là lãng phí thời gian hay là sự nạp năng lượng?",
+      "text_en": "A weekend where we do nothing but stay home and scroll on our phones — is that a waste of time or necessary recharging for you?",
+      "text_zh": "一个周末什么都不做，只是呆在家里刷手机——对你来说这是浪费时间还是必要的充电？",
+      "text_ja": "何もせずに家でスマホを見ているだけの週末は、あなたにとって時間の無駄ですか、それとも必要なエネルギーチャージですか？"
+    },
+    {
+      "id": 20,
+      "tag": "deep",
+      "text_vi": "Làm thế nào để chúng ta vẫn cảm thấy gắn kết trong những ngày mà cả hai đều cạn kiệt năng lượng vì áp lực bên ngoài?",
+      "text_en": "How can we still feel connected on days when we are both drained of energy from outside pressures?",
+      "text_zh": "当我们都被外界压力耗尽精力的日子里，我们如何才能依然感到彼此连结？",
+      "text_ja": "外界からのプレッシャーで二人ともエネルギーを消耗している日でも、どうすればお互いの繋がりを感じられるでしょうか？"
+    }
+  ]
 }
